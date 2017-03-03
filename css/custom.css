@@ -1,0 +1,28 @@
+html, body { margin:0; padding:0 }
+#allContent{
+  max-width: 960px;
+  margin: auto;
+}
+#navWrapper{
+  display: flex;
+  justify-content: space-between; /*For splitting up 'brandName' and 'navItems'*/
+  background-color: red;
+  height: 10vh;
+
+}
+#brandName{
+  display: flex;
+  flex-direction: row;
+  font-size: 5vh;
+  align-items: center;
+}
+.navItems{
+  display: flex;
+  flex-direction: row;
+  
+}
+.navItems p{
+  padding-left: 2vh;
+  padding-right: 2vh;
+  font-size: 3vh;
+}
