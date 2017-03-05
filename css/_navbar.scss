@@ -1,0 +1,19 @@
+#navWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /*For splitting up 'brandName' and 'navItem'*/
+    padding-top: 1em; /*Little bit of space away from top of page*/
+    border-bottom: 1px solid black;
+}
+#brandName{
+    display: flex;
+    flex-direction: row;
+    font-size: 3em;
+    flex-grow: 6;
+}
+.navItem{
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;
+    font-size: 1.25em;
+}

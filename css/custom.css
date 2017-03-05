@@ -1,28 +1,78 @@
-html, body { margin:0; padding:0 }
-#allContent{
-  max-width: 960px;
-  margin: auto;
-}
-#navWrapper{
+#navWrapper {
   display: flex;
-  justify-content: space-between; /*For splitting up 'brandName' and 'navItems'*/
-  background-color: red;
-  height: 10vh;
+  flex-direction: row;
+  justify-content: space-between;
+  /*For splitting up 'brandName' and 'navItem'*/
+  padding-top: 1em;
+  /*Little bit of space away from top of page*/
+  border-bottom: 1px solid black; }
 
-}
-#brandName{
+#brandName {
   display: flex;
   flex-direction: row;
-  font-size: 5vh;
-  align-items: center;
-}
-.navItems{
+  font-size: 3em;
+  flex-grow: 6; }
+
+.navItem {
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-end;
+  font-size: 1.25em; }
+
+#resumeWrapper {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  max-width: 800px; }
+  #resumeWrapper h2 {
+    margin-bottom: .1em; }
+
+/*Child of resumeWrapper*/
+.entryWrapper {
+  display: flex;
+  flex-direction: column; }
+  .entryWrapper ul {
+    margin-top: .1em; }
+
+/*Child of entryWrapper*/
+.flexRow {
   display: flex;
   flex-direction: row;
-  
-}
-.navItems p{
-  padding-left: 2vh;
-  padding-right: 2vh;
-  font-size: 3vh;
-}
+  /*
+  flex-grow to fill .entryWrapper
+  so that justify-content works properly
+  */
+  flex-grow: 1;
+  justify-content: space-between; }
+
+/*Child of flex row*/
+.flexItem {
+  display: flex;
+  /*Eliminate unneeded vertical space*/
+  margin: .1em; }
+
+.heading {
+  border-bottom: 1px solid black; }
+
+.skillList {
+  flex-grow: 4; }
+
+/*Warmer white*/
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFFAFA; }
+
+#allContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 960px;
+  margin: auto; }
+
+.right {
+  margin-left: auto; }
+
+a {
+  text-decoration: none; }
+
+/*# sourceMappingURL=custom.css.map */

@@ -1,0 +1,20 @@
+@import 'navbar';
+@import 'resume';
+$primaryColor: #FFFAFA; /*Warmer white*/
+html, body { 
+    margin:0; 
+    padding:0; 
+    background-color: $primaryColor;
+}
+#allContent{
+    display: flex;
+    flex-direction: column;
+    max-width: 960px;
+    margin: auto;
+}
+.right{
+    margin-left: auto;
+}
+a{
+    text-decoration: none;
+}
