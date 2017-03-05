@@ -5,6 +5,7 @@ html, body {
     margin:0; 
     padding:0; 
     background-color: $primaryColor;
+    font-family: Gotham;
 }
 #allContent{
     display: flex;
@@ -12,8 +13,14 @@ html, body {
     max-width: 960px;
     margin: auto;
 }
-.right{
-    margin-left: auto;
+.bold{
+    font-weight: bold;
+}
+.italic{
+    font-style: italic;
+}
+.oblique{
+    font-style: oblique;
 }
 a{
     text-decoration: none;
