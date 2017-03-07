@@ -57,6 +57,25 @@
 .skillList {
   flex-grow: 4; }
 
+.projectsWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 100%; }
+
+.projectContainer {
+  display: flex;
+  box-sizing: border-box;
+  border: 3px solid black;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  margin-bottom: 20px; }
+  .projectContainer img {
+    max-width: 100%; }
+
 /*Warmer white*/
 html, body {
   margin: 0;
