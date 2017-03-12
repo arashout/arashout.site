@@ -1,3 +1,4 @@
+$projectSideLength: 300px;
 .projectsWrapper{
     display: flex;
     flex-direction: row;
@@ -10,10 +11,10 @@
     display: flex;
     box-sizing: border-box;
     border: 3px solid black;
-    width: 300px;
-    height: 300px;
-    margin: 10px;
-    margin-bottom: 20px;
+    width: $projectSideLength;
+    height: $projectSideLength;
+    margin: $projectSideLength/30;
+    margin-bottom: $projectSideLength/15;
     img {
     max-width:100%;
     }
