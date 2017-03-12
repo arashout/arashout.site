@@ -16,6 +16,8 @@ $projectSideLength: 300px;
     margin: $projectSideLength/30;
     margin-bottom: $projectSideLength/15;
     img {
-    max-width:100%;
+        /*Make image stretch to fit*/
+        width: 100%;
+        height: 100%;
     }
 }
