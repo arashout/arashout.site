@@ -1,0 +1,12 @@
+INTRO:
+
+This is my super simple personal website. It perfectly illustrates why I won't become a star UX/UI designer but here's some things I am good at:
+-Automating things, I hate seeing smart people waste their time doing repetitive menial tasks. So I have made it my lifes mention to automate these tasks.
+I have become very good at it, my usual tools of choice are Selenium, Python, VBA (For Microsoft Office + SAP), and Autohotkey
+-CADing things, the quintissental mechanical engineering student skill. I have had lots of practice transforming imagination into <strike>reality</strike> virtual reality
+
+What I'm working on:
+-Solving Math/Physics problems programmitically
+-Data science and Machine learning
+-Lower level programming knowledge
+-Lots of MOOOOCS
