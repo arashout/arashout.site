@@ -17,7 +17,15 @@
   display: flex;
   flex-grow: 1;
   align-items: flex-end;
-  font-size: 1.25em; }
+  font-size: 1.25em;
+  padding-bottom: .5em; }
+  .navItem a:visited {
+    color: black; }
+
+.introContent {
+  max-width: 800px;
+  font-size: 2em;
+  margin: auto; }
 
 #resumeWrapper {
   display: flex;
@@ -84,7 +92,6 @@
 .projectContent {
   display: flex;
   flex-direction: column;
-  text-align: center;
   margin: auto;
   max-width: 800px;
   font-size: 1.5em; }
@@ -120,12 +127,19 @@ html, body {
   background-color: #FFF;
   font-family: Gotham; }
 
+a {
+  text-decoration: none; }
+
 #allContent {
   display: flex;
   flex-direction: column;
   max-width: 960px;
   margin: auto; }
 
+#banner {
+  height: 3vh; }
+
+/*Helper classes*/
 .bold {
   font-weight: bold; }
 
@@ -135,11 +149,45 @@ html, body {
 .oblique {
   font-style: oblique; }
 
-a {
-  text-decoration: none; }
+.hidden {
+  display: none; }
 
-.introContent {
-  max-width: 800px;
-  font-size: 1.5em; }
+/*For scalability*/
+h1 {
+  font-size: 2.5rem; }
+
+h2 {
+  font-size: 2.25rem; }
+
+h3 {
+  font-size: 2rem; }
+
+h4 {
+  font-size: 1.75rem; }
+
+h5 {
+  font-size: 1.5rem; }
+
+h6 {
+  font-size: 1.25rem; }
+
+p {
+  font-size: 1rem; }
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px; } }
+@media (min-width: 480px) {
+  html {
+    font-size: 13px; } }
+@media (min-width: 768px) {
+  html {
+    font-size: 14px; } }
+@media (min-width: 992px) {
+  html {
+    font-size: 15px; } }
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px; } }
 
 /*# sourceMappingURL=custom.css.map */

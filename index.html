@@ -10,40 +10,19 @@
 <body>
     <div id="allContent">
         <div w3-include-html="navbar.html"></div>
+        <div id="banner"></div>
         <div class="introContent">
-            <h3>
-                Hey I'm a mechanical engineering student who loves to program...
-            </h3>
-            <div>
-                But I'm also good at some other things like:
-                <ul>
-                    <li>
-                        <p><strong>CADing</strong>, the quintessential mechanical engineering skill. </p>
-                        <p>I've had lots of practice over the course of my degree 
-                        transforming designs in mind into tangilbe 3D models ready
-                        to be printed or machined.</p>
-                    </li>
-                    <li>
-                        <p><strong>Automation</strong>, I believe that we shouldn't waste human potential on reptitive tasks. We're too smart for that.</p>
-                        <p>
-                            So I have made it my lifes mission to automate any menial process I encounter in an attempt to improve the well-being and sanity of those around me.
-                            The tools I use to achieve this vary on the task at hand, in the past I've used Python, Selenium, VBA and Autohotkey.
-                        </p>
-                    </li>
-                    <li>
-                        <p><strong>Web Development</strong>, obviously I'm not a full stack developer, yet...</p>
-                        <p>
-                            But I've grown pretty fond of using simple HTML, CSS, Javascript to build my projects that
-                            I can share with the world. In general, I aim for simple and functional as opposed to anything flashy,
-                            this website being a perfect example.
-                        </p>
-                    </li>
-                </ul>
-            </div>
+            <h3 class="hidden">Welcome to my super simple website...</h3>
+            <ul>
+                <li class="hidden">Where I tell you <a href="resume.html">who I am</a></li>
+                <li class="hidden">What kinds of <a href="projects.html">projects</a> I've worked on</li>
+                <li class="hidden">And of course, how to get in touch.</li>
+            </ul>
         </div>
     </div>
 </body>
 <script src="https://www.w3schools.com/lib/w3data.js"></script>
+<script src="js/intro.js"></script>
 <script>
     w3IncludeHTML();
 </script>
