@@ -1,6 +1,5 @@
 window.onload = function () {
     unhideDivs();
-    changeBaseURL();
 }
 
 function unhideDivs(){
