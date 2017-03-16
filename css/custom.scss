@@ -22,7 +22,9 @@ a{
 #banner{
     height: 3vh;
 }
-
+.section{
+    border-top: solid black 1px;
+}
 /*Helper classes*/
 .bold{
     font-weight: bold;
