@@ -23,11 +23,17 @@
   margin-right: 2vw; }
 
 .introContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 800px;
+  height: 70vh;
   font-size: 2em;
   margin: auto;
   /*minimum margin hack!*/
   border: transparent solid 5vw; }
+  .introContent li {
+    margin-top: 3vh; }
 
 #resumeWrapper {
   display: flex;
