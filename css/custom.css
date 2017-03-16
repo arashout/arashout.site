@@ -19,8 +19,6 @@
   align-items: flex-end;
   font-size: 1.25em;
   padding-bottom: .5em; }
-  .navItem a:visited {
-    color: black; }
 
 .introContent {
   max-width: 800px;
@@ -128,7 +126,8 @@ html, body {
   font-family: Gotham; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: inherit; }
 
 #allContent {
   display: flex;
