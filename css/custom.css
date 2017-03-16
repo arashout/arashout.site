@@ -18,12 +18,15 @@
   flex-grow: 1;
   align-items: flex-end;
   font-size: 1.25em;
-  padding-bottom: .5em; }
+  padding-bottom: .5em;
+  margin: 2vw; }
 
 .introContent {
   max-width: 800px;
   font-size: 2em;
-  margin: auto; }
+  margin: auto;
+  /*minimum margin hack!*/
+  border: transparent solid 10vw; }
 
 #resumeWrapper {
   display: flex;
