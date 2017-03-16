@@ -27,7 +27,7 @@
   font-size: 2em;
   margin: auto;
   /*minimum margin hack!*/
-  border: transparent solid 10vw; }
+  border: transparent solid 5vw; }
 
 #resumeWrapper {
   display: flex;
@@ -130,8 +130,7 @@ html, body {
   font-family: Gotham; }
 
 a {
-  text-decoration: none;
-  color: inherit; }
+  text-decoration: none; }
 
 #allContent {
   display: flex;
