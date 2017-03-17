@@ -27,7 +27,7 @@
   flex-direction: column;
   justify-content: center;
   max-width: 800px;
-  height: 70vh;
+  height: 75vh;
   font-size: 2em;
   margin: auto;
   /*minimum margin hack!*/
@@ -143,9 +143,6 @@ a {
   flex-direction: column;
   max-width: 960px;
   margin: auto; }
-
-#banner {
-  height: 3vh; }
 
 .section {
   border-top: solid black 1px; }
