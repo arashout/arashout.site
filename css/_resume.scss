@@ -6,6 +6,8 @@
     h2{
         margin-bottom: .1em;
     }
+    /*minimum margin hack!*/
+    border: transparent solid 5vw;
 }
 /*Child of resumeWrapper*/
 .entryWrapper{
