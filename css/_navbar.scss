@@ -11,6 +11,10 @@
     font-size: 3em;
     flex-grow: 6;
     margin-left: .5em;
+    
+    a{
+        color: inherit;
+    }
 }
 .navItem{
     display: flex;
@@ -19,4 +23,8 @@
     font-size: 1.25em;
     padding-bottom: .5em;
     margin-right: 2vw;
+    
+    a{
+        color: inherit;
+    }
 }
