@@ -137,6 +137,17 @@
 .largeMagnify:hover {
   transform: scale(5); }
 
+#contactWrapper {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  width: 100%;
+  /*minimum margin hack!*/
+  border: transparent solid 2vw; }
+
+.contactContainer {
+  display: flex; }
+
 html, body {
   margin: 0;
   padding: 0;
