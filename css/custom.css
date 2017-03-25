@@ -144,7 +144,6 @@
   display: flex;
   margin: auto;
   flex-direction: column;
-  width: 50vw;
   /*minimum margin hack!*/
   border: transparent solid 2vw; }
 
