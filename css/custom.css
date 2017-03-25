@@ -137,16 +137,29 @@
 .largeMagnify:hover {
   transform: scale(5); }
 
+#contactSection h1 {
+  margin-bottom: 0px; }
+
 #contactWrapper {
   display: flex;
   margin: auto;
   flex-direction: column;
-  width: 100%;
+  width: 50vw;
   /*minimum margin hack!*/
   border: transparent solid 2vw; }
 
 .contactContainer {
-  display: flex; }
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 1em; }
+  .contactItem img {
+    height: 3em; }
 
 html, body {
   margin: 0;
