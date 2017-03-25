@@ -7,7 +7,9 @@
         margin-bottom: .1em;
     }
     /*minimum margin hack!*/
-    border: transparent solid 5vw;
+    border-right: transparent solid 5vw;
+    border-left: transparent solid 5vw;
+
 }
 /*Child of resumeWrapper*/
 .entryWrapper{

@@ -46,7 +46,8 @@
   flex-direction: column;
   max-width: 800px;
   /*minimum margin hack!*/
-  border: transparent solid 5vw; }
+  border-right: transparent solid 5vw;
+  border-left: transparent solid 5vw; }
   #resumeWrapper h2 {
     margin-bottom: .1em; }
 
