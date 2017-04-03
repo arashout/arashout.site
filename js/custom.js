@@ -1,7 +1,11 @@
 window.onload = function () {
     unhideDivs();
 }
-
+/**
+ * For slowly unhiding divs...
+ * Not yet properly implemented...
+ * @returns {[[Type]]} [[Description]]
+ */
 function unhideDivs(){
     var hiddenDivs = document.getElementsByClassName('hidden');
     var arrDivs = nodelistToArray(hiddenDivs);
