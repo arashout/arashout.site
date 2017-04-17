@@ -25,3 +25,15 @@ function changeBaseURL(){
     }
     return 0;
 }
+/**
+ * Change project thumbnails on mouse hover
+ * @param  {[type]} element   [description]
+ * @param  {[type]} imagePath [description]
+ * @return {[type]}           [description]
+ */
+function hover(element, imagePath) {
+    element.setAttribute('src', imagePath);
+}
+function unhover(element, imagePath) {
+    element.setAttribute('src', imagePath);
+}
