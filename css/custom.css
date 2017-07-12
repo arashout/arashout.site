@@ -95,8 +95,8 @@
   border: 7px solid black;
   width: 225px;
   height: 225px;
-  margin: 10px;
-  margin-bottom: 20px;
+  margin: 7.5px;
+  margin-bottom: 15px;
   transition: transform .5s; }
   .project:hover {
     transform: scale(1.5); }
