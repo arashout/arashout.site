@@ -1,4 +1,4 @@
-$projectSideLength: 225px;
+$projectSideLength: 300px;
 
 .projectsWrapper{
     display: flex;
@@ -11,8 +11,9 @@ $projectSideLength: 225px;
 
 .project{
     display: flex;
+    flex-direction: column;
     box-sizing: border-box;
-    border: 7px solid black;
+    border: 5px solid black;
     width: $projectSideLength;
     height: $projectSideLength;
     margin: $projectSideLength/30;
