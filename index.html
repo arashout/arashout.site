@@ -1,229 +1,30 @@
+---
+# Jekyll Front Matter
+---
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Arash Outadi | Engineering Student | Programmer </title>
+    <title>{{ site.data.basics.title }}</title>
+    <!--TODO: Add more meta tags for SEO -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="css/bulma.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/header_styles.css">
+    <link rel="stylesheet" type="text/css" href="css/resume_styles.css">
 </head>
 
 <body>
-    <div id="allContent">
-        <nav id="navWrapper">
-            <div id="brandName"><a href="index.html">Arash Outadi</a></div>
-            <div class="navItem"><a href="index.html#resume">Resume</a></div>
-            <div class="navItem"><a href="index.html#projects">Projects</a></div>
-            <div class="navItem"><a href="index.html#contact">Contact</a></div>
-        </nav>
+    <div class="container">
+        {% include header.html %}
 
-        <div id="resumeSection" class="section">
-            <a name="resume"></a>
-            <h1 align="center">Where I've worked so far...</h1>
-            <div id="resumeWrapper">
-                <h2 class="heading">Education</h2>
-                <div class="entryWrapper">
-                    <div class="flexRow">
-                        <p class="flexItem">University of British Columbia</p>
-                        <p class="flexItem">September 2013- Present</p>
-                    </div>
-                    <div class="flexRow">
-                        <p class="flexItem oblique">B.ASc in Mechanical Engineering</p>
-                        <p class="flexItem italic">Vancouver, BC</p>
-                    </div>
-
-                </div>
-
-                <h2 class="heading">Work Experience</h2>
-                <div class="entryWrapper">
-                    <div class="flexRow">
-                        <p class="flexItem bold">Andritz</p>
-                        <p class="flexItem">August 2016 - December 2016</p>
-                    </div>
-                    <div class="flexRow">
-                        <p class="flexItem oblique">Engineering Co-op Student</p>
-                        <p class="flexItem italic">Vancouver, BC</p>
-                    </div>
-                    <div class="description">
-                        <ul>
-                            <li>Created <a href="https://github.com/arashout/Andritz/tree/master/VBA">Excel utilities with VBA</a>                                that massively stream-lined SAP processes, saving Project Managers 10 hours every week. Including:
-                                <ul>
-                                    <li>GUI for quickly retrieving any information about SAP materials in Excel all at once</li>
-                                    <li>Automated script capable of pulling 100s of drawings during inventory rush</li>
-                                </ul>
-                            </li>
-                            <li>Developed a <a href="https://github.com/arashout/DatabaseSearchGUI">Python database app</a> reducing
-                                time spent searching for SAP materials by 50%</li>
-                            <li>3D modelled parts for CNC Mill with Autodesk Inventor while following good practices</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="entryWrapper">
-                    <div class="flexRow">
-                        <p class="flexItem bold">Canadian Logistics</p>
-                        <p class="flexItem">December 2015 - May 2016</p>
-                    </div>
-                    <div class="flexRow">
-                        <p class="flexItem oblique">Data Anaylst</p>
-                        <p class="flexItem italic">Vancouver, BC</p>
-                    </div>
-                    <div class="description">
-                        <ul>
-                            <li>Overhauled manual processes, using Python & regular expressions to consolidate all data in one
-                                place
-                            </li>
-                            <li>Created several Python scripts and VBA macros to automate tasks saving at-least 15 minutes each
-                                day
-                            </li>
-                            <li>Improved hiring practices by analyzing compiled data to demonstrate the low retention rates associated
-                                with hiring through labor agencies</li>
-                        </ul>
-                    </div>
-                </div>
-                <h2 class="heading">Technical Experience</h2>
-                <div class="entryWrapper">
-                    <div class="flexRow">
-                        <p class="flexItem bold">UBC Baja SAE Engineering Design Team</p>
-                        <p class="flexItem">October 2014 - April 2016</p>
-                    </div>
-                    <div class="flexRow">
-                        <p class="flexItem oblique">Drive Train Member</p>
-                        <p class="flexItem italic">Vancouver, BC</p>
-                    </div>
-                    <div class="description">
-                        <ul>
-                            <li>Designed a SolidWorks assembly of all major drive train components and used the model to determine
-                                the vehicles spacial constraints</li>
-                            <li>Procured half-shaft material strong enough to withstand 500 ft· lb of torque preventing shaft
-                                failure
-                            </li>
-                            <li>Saved $400 by securing sponsorship from Golden Gear to cut and spline half-shafts for free</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="entryWrapper">
-                    <div class="flexRow">
-                        <p class="flexItem bold">EURO Project - Water Jet Propelled Vehicle</p>
-                        <p class="flexItem">April 2015- May 2015</p>
-                    </div>
-                    <div class="flexRow">
-                        <p class="flexItem oblique">Team Member</p>
-                        <p class="flexItem italic">Vancouver, BC</p>
-                    </div>
-                    <div class="description">
-                        <ul>
-                            <li>
-                                Developed a MATLAB time marching simulation which determined the optimal water to air ratio and predicted the vehicle speed
-                                to within 12%
-                            </li>
-                            <li>Used rapid prototyping methods to design and implement Ackermann steering to minimze slippage
-                                on icy track surface</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="projectsSection" class="section">
-            <a name="projects"></a>
-            <h1 align="center">Projects on display</h1>
-            <div class="projectsWrapper">
-                <div class="project">
-                    <a href="improvedUBCTranscript.html">
-                <img src="img/ProjectThumbnails/Transcript.png">
-            </a>
-                </div>
-                <div class="project">
-                    <a href="https://chrome.google.com/webstore/detail/element-eraser/cflkmoejpjmceaiahbjdkmehceccknce?hl=en">
-                <img src="img/ProjectThumbnails/ElementEraser.png">
-            </a>
-                </div>
-                <div class="projectsWrapper">
-                    <div class="project">
-                        <a href="https://play.google.com/store/apps/details?id=site.arashout.workoutnotebook">
-                <img src="img/ProjectThumbnails/StrengthJournalLauncher.png">
-            </a>
-                    </div>
-                    <div class="project">
-                        <a href="https://github.com/arashout/BlobCombatSimulator">
-                <img src="img/ProjectThumbnails/BlobCombat.PNG"
-                onmouseover="hover(this,'img/ProjectThumbnails/BlobCombat.PNG');"
-                onmouseout="unhover(this, 'img/ProjectThumbnails/BlobCombat.PNG');">
-            </a>
-                    </div>
-                    <div class="project">
-                        <a href="https://github.com/arashout/Asteroids">
-                <img src="img/ProjectThumbnails/Asteroids.PNG"
-                onmouseover="hover(this,'img/ProjectThumbnails/Asteroids.gif');"
-                onmouseout="unhover(this, 'img/ProjectThumbnails/Asteroids.PNG');">
-            </a>
-                    </div>
-                    <div class="project">
-                        <a href="https://arashout.github.io/SudokuSolver/">
-                <img src="img/ProjectThumbnails/Sudoku.PNG"
-                    onmouseover="hover(this,'img/ProjectThumbnails/Sudoku.gif');"
-                onmouseout="unhover(this, 'img/ProjectThumbnails/Sudoku.PNG');">
-            </a>
-                    </div>
-                    <div class="project">
-                        <a href="https://arashout.github.io/8PuzzleSolver/">
-                <img src="img/ProjectThumbnails/8Puzzle.PNG" 
-                onmouseover="hover(this,'img/ProjectThumbnails/8Puzzle.gif');"
-                onmouseout="unhover(this, 'img/ProjectThumbnails/8Puzzle.PNG');">
-            </a>
-                    </div>
-                    <div class="project">
-                        <a href="https://github.com/arashout/DatabaseSearchGUI">
-                <img src="img/ProjectThumbnails/DatabaseApp.PNG"
-                    onmouseover="hover(this,'img/ProjectThumbnails/DatabaseApp.gif');"
-                onmouseout="unhover(this, 'img/ProjectThumbnails/DatabaseApp.PNG');">
-            </a>
-                    </div>
-                    <div class="project">
-                        <a href="baja.html">
-                <img src="img/ProjectThumbnails/BajaLogo.jpg">
-            </a>
-                    </div>
-                    <div class="project">
-                        <a href="euro.html">
-                <img src="img/ProjectThumbnails/EuroLogo.jpg">
-            </a>
-                    </div>
-                    <div class="project">
-                        <a href="stopUXO.html">
-                <img src="img/ProjectThumbnails/StopUXOLogo.PNG">
-            </a>
-                    </div>
-                </div>
-            </div>
-            <div id="contactSection" class="section">
-                <a name="contact"></a>
-                <h1 align="center">Contact</h1>
-                <div id="contactWrapper">
-                    <div class="contactContainer">
-                        <div class="contactItem">
-                            <a href="https://www.linkedin.com/in/arashout/">
-                <img src="svg/001-linkedin-logo.svg">
-                </a>
-                        </div>
-                        <div class="contactItem">
-                            <a href="https://github.com/arashout">
-                <img src="svg/002-github-logo.svg">
-                    </a>
-                        </div>
-                        <div class="contactItem">
-                            <h4>Learn more about me!</h4>
-                        </div>
-                    </div>
-                    <div class="contactContainer">
-                        <div class="contactItem">
-                            <img src="svg/003-close-envelope.svg">
-                        </div>
-                        <div class="contactItem">
-                            <h4>arash.out@gmail.com</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="resumeSection">
+            {% include bulma_resume.html %}
         </div>
 </body>
 <script src="js/helper.js"></script>

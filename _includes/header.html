@@ -1,0 +1,16 @@
+<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-marginless">{{site.data.header.basics.name}}</h1>
+            <h2 class="subtitle is-marginless">{{site.data.header.basics.title}}</h2>
+            <ul class="socials-list">
+                {% for profile in site.data.header.profiles %}
+                <li>
+                    {{ profile.html }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+</section>

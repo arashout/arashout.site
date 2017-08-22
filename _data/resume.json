@@ -1,0 +1,72 @@
+{
+    "education": [
+        {
+            "institution": "University of British Columbia",
+            "area": "Mechanical Engineering",
+            "location": {
+                "address": "",
+                "postalCode": "",
+                "city": "Vancouver",
+                "countryCode": "CA",
+                "region": "British Columbia",
+                "regionCode": "BC"
+            },
+            "studyType": "Bachelor of Applied Science",
+            "startDate": "2013-9-07",
+            "endDate": "2018-04-21",
+            "gpa": "3.6/4.33",
+            "courses": [
+                ""
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "name": "General Programming",
+            "level": "",
+            "keywords": [
+                "Python",
+                "C++",
+                "Java",
+                "Kotlin",
+                "C",
+                "MATLAB",
+                "VBA"
+            ]
+        },
+        {
+            "name": "Web Development",
+            "level": "",
+            "keywords": [
+                "Flask",
+                "Django",
+                "Selenium",
+                "Javascript",
+                "HTML",
+                "CSS"
+            ]
+        },
+        {
+            "name": "IDEs",
+            "level": "",
+            "keywords": [
+                "Visual Studio",
+                "Android Studio",
+                "QtCreator",
+                "PyCharm",
+                "IntelliJ"
+            ]
+        }
+    ],
+    "interests": [
+        {
+            "name": "",
+            "keywords": [
+                "Python",
+                "Machine Learning",
+                "Natural Language Process",
+                "Machine Learning"
+            ]
+        }
+    ]
+}

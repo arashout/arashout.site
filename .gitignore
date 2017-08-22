@@ -1,4 +1,3 @@
-# Ignore docs files
-.sass-cache
-.sass-cache/*
-*.map
+_site/
+.sass-cache/
+.jekyll-metadata

@@ -1,0 +1,73 @@
+projects:
+  - name: JobBot
+    website: null
+    websiteName: null
+    source: 'https://github.com/arashout/JobBot'
+    summary: >-
+      Robot that automatically searches for jobs using the Indeed API and
+      applies to them using NLP to generate relevant cover letters.
+    technologies:
+      - 'Python'
+      - 'Selenium'
+      - 'XPath'
+      - NLP
+  - name: Strength Journal
+    website: >-
+      https://play.google.com/store/apps/details?id=site.arashout.workoutnotebook
+    websiteName: Google Play Store
+    source: 'https://github.com/arashout/StrengthJournal'
+    summary: >-
+      An Android workout tracker that let’s you jump straight into recording
+      your exercises
+    technologies:
+      - Kotlin
+      - Java
+      - XML
+      - SQLite
+  - name: Element Eraser
+    website: >-
+      https://chrome.google.com/webstore/detail/element-eraser/cflkmoejpjmceaiahbjdkmehceccknce?hl=en
+    websiteName: Chrome Web Store
+    source: 'https://github.com/arashout/ElementEraser'
+    summary: >-
+      A chrome extension that automatically removes any content that the user
+      does not want to see. Furthermore users can save multiple profiles for any
+      website
+    technologies:
+      - JavaScript
+      - Chrome API
+      - HTML
+      - CSS
+  - name: Blob Combat Simulation
+    website: null
+    websiteName: null
+    source: 'https://github.com/arashout/BlobCombatSimulator'
+    summary: >-
+      Developed a simulation where 'blobs' evolve to fight using neural networks
+      and different genetic selection algorithms
+    technologies:
+      - C++
+      - SFML
+      - QtCreator
+      - Eigen
+  - name: Water Jet Propelled Vehicle
+    website: 'http://arashout.site/euro.html'
+    websiteName: Portfolio Link
+    source: null
+    summary: >-
+      Built a water-jet propelled RC car that came 1st place out of 20 teams in
+      competition, scoring major points for a time marching simulation that
+      predicted vehicle kinematics to within 12% accuracy,
+    technologies: 'C, MATLAB, SolidWorks, 3D Printing'
+  - name: Improved UBC Transcript
+    website: null
+    websiteName: null
+    source: 'https://github.com/arashout/ImprovedUBCTranscript'
+    summary: >-
+      A JavaScript bookmarklet that users can easily click to enhance the
+      unofficial UBC Transcript by removing clutter and adding course
+      information to grades. Retrieves information from web app with REST API,
+    technologies:
+      - Python
+      - Flask
+      - JavaScript
