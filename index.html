@@ -1,4 +1,6 @@
---- # Jekyll Front Matter ---
+--- 
+# Jekyll Front Matter 
+---
 
 <!DOCTYPE html>
 <html>
@@ -22,13 +24,19 @@
         <div class="columns">
             <div class="column is-narrow">
                 <p class="title">Experience</p>
-                {% for experience in site.data.resume.experience %} {% include experience_snippet.html experience=experience %} {% endfor
-                %}
+                {% for experience in site.data.resume.experiences %} 
+                {% include experience_snippet.html experience=experience %} 
+                {% endfor %}
             </div>
         </div>
 
         <div>
-                <p class="title">Projects</p>
+            <p class="title">Projects</p>
+            <div class="projects-container">
+                {% for project in site.data.resume.projects %}
+                {% include project_snippet.html project=project %} 
+                {% endfor %}
+            </div>
         </div>
     </div>
 </body>

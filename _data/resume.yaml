@@ -1,10 +1,8 @@
-experience:
+experiences:
   - company: Andritz Ltd.
     position: Engineering Co-op Student
-    website: null
     startDate: 2016-08-22T00:00:00.000Z
     endDate: 2016-12-20T00:00:00.000Z
-    summary: null
     highlights:
       - >-
         Using SAP API and VBA created a suite of Excel tools for Project
@@ -14,10 +12,8 @@ experience:
         SAP materials by 50%
   - company: Canadian Logistics
     position: Data Analyst Intern
-    website: null
     startDate: 2015-12-27T00:00:00.000Z
     endDate: 2016-09-05T00:00:00.000Z
-    summary: null
     highlights:
       - >-
         Replaced manual processes with Python to efficiently consolidate all
@@ -30,22 +26,32 @@ experience:
         allowing the owner to make informed decisions about company operations
 
 projects:
+  - name: Brightspace API Search
+    source: 'https://github.com/arashout/BrightSpaceAPIClient'
+    summary: >-
+      A web app that allows you to easily view, save and download 
+      datasets using Brightspace APIs
+    technologies:
+      - Go
+      - Angular
+      - Typescript
+      - REST API
+      - Datatables
+      - JQuery
   - name: JobBot
-    website: null
-    websiteName: null
     source: 'https://github.com/arashout/JobBot'
     summary: >-
       Robot that automatically searches for jobs using the Indeed API and
       applies to them using NLP to generate relevant cover letters.
     technologies:
-      - 'Python'
-      - 'Selenium'
-      - 'XPath'
+      - Python
+      - Selenium
+      - XPath
       - NLP
   - name: Strength Journal
-    website: >-
+    publishLink: >-
       https://play.google.com/store/apps/details?id=site.arashout.workoutnotebook
-    websiteName: Google Play Store
+    publisher: Google Play Store
     source: 'https://github.com/arashout/StrengthJournal'
     summary: >-
       An Android workout tracker that let’s you jump straight into recording
@@ -56,9 +62,9 @@ projects:
       - XML
       - SQLite
   - name: Element Eraser
-    website: >-
+    publishLink: >-
       https://chrome.google.com/webstore/detail/element-eraser/cflkmoejpjmceaiahbjdkmehceccknce?hl=en
-    websiteName: Chrome Web Store
+    publisher: Chrome Web Store
     source: 'https://github.com/arashout/ElementEraser'
     summary: >-
       A chrome extension that automatically removes any content that the user
@@ -67,11 +73,7 @@ projects:
     technologies:
       - JavaScript
       - Chrome API
-      - HTML
-      - CSS
   - name: Blob Combat Simulation
-    website: null
-    websiteName: null
     source: 'https://github.com/arashout/BlobCombatSimulator'
     summary: >-
       Developed a simulation where 'blobs' evolve to fight using neural networks
@@ -81,19 +83,9 @@ projects:
       - SFML
       - QtCreator
       - Eigen
-  - name: Water Jet Propelled Vehicle
-    website: 'http://arashout.site/euro.html'
-    websiteName: Portfolio Link
-    source: null
-    summary: >-
-      Built a water-jet propelled RC car that came 1st place out of 20 teams in
-      competition, scoring major points for a time marching simulation that
-      predicted vehicle kinematics to within 12% accuracy,
-    technologies: 'C, MATLAB, SolidWorks, 3D Printing'
   - name: Improved UBC Transcript
-    website: null
-    websiteName: null
     source: 'https://github.com/arashout/ImprovedUBCTranscript'
+    writeup: 'improvedUBCTranscript.html'
     summary: >-
       A JavaScript bookmarklet that users can easily click to enhance the
       unofficial UBC Transcript by removing clutter and adding course
@@ -102,3 +94,26 @@ projects:
       - Python
       - Flask
       - JavaScript
+  - name: 8 Puzzle Solver
+    source: https://github.com/arashout/8PuzzleSolver
+    writeup: ttps://github.com/arashout/8PuzzleSolver
+    demo: https://arashout.github.io/8PuzzleSolver
+    summary: >-
+      A web application that efficiently solves a random 8-puzzles
+      using A* search and priority queues. Furthermore the solution to
+      each puzzle is animated using CSS transitions
+    technologies:
+      - Javascript
+      - CSS
+
+  - name: Water Jet Propelled Vehicle
+    writeup: 'http://arashout.site/euro.html'
+    summary: >-
+      Built a water-jet propelled RC car that came 1st place out of 20 teams in
+      competition, scoring major points for a time marching simulation that
+      predicted vehicle kinematics to within 12% accuracy,
+    technologies: 
+    - C
+    - MATLAB
+    - SolidWorks
+    - 3D Printing

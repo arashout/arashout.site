@@ -5,8 +5,29 @@
         display: inline;
     }
 }
+
+
+.card-header-title{
+    font-weight: normal;
+    font-size: 1.25rem;
+}
 .job-highlights{
     list-style-type: circle;
+}
+
+
+.projects-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.project-wrapper{
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px;
+    width: 20vw;
+    height: 5w;
+    min-width: 100px;
 }
 
 .hidden {
@@ -14,4 +35,8 @@
 }
 .hidden-parent:hover .hidden{
     display: flex;
+}
+
+.float-right{
+    float: right;
 }
