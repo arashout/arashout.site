@@ -1,3 +1,4 @@
-# arashout
-Pretty much like the heading says, this is a simple static website where I plan to host my projects.
-I tried to use flexbox as much as possible to keep the website somewhat responsive.
+# arashout.site
+This is the second iteration of my personal website.
+It is heavily inspired by [Long Tran's website](http://ltran.co/) which honestly still much better than mine. 
+Built with Jekyll, YAML and Bulma (CSS). 

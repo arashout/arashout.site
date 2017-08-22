@@ -1,5 +1,13 @@
 ---
 ---
+$page-width : 900px;
+.container {
+    max-width: $page-width;
+}
+.hero-body {
+    padding-left: 0px;
+}
+
 .socials-list {
     li {
         display: inline;
@@ -9,25 +17,27 @@
 
 .card-header-title{
     font-weight: normal;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 }
 .job-highlights{
     list-style-type: circle;
+    max-width: $page-width - 100px;
 }
 
 
 .projects-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 .project-wrapper{
     display: flex;
     flex-direction: column;
 
-    margin: 10px;
-    width: 20vw;
+    margin: 10px 0px 10px 0px;
+    width: 15vw;
     height: 5w;
-    min-width: 100px;
+    min-width: 250px;
 }
 
 .hidden {

@@ -4,10 +4,10 @@
         <div class="level-item">
             <section class="hero">
                 <div class="hero-body">
-                    <h1 class="title is-marginless">{{site.data.header.basics.name}}</h1>
-                    <h2 class="subtitle is-marginless">{{site.data.header.basics.title}}</h2>
+                    <h1 class="is-size-4 is-marginless">{{site.data.resume.basics.name}}</h1>
+                    <h2 class="is-size-6 is-marginless">{{site.data.resume.basics.htmlTitle}}</h2>
                     <ul class="socials-list">
-                        {% for profile in site.data.header.profiles %}
+                        {% for profile in site.data.resume.profiles %}
                         <li>
                             {{ profile.html }}
                         </li>
