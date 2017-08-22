@@ -1,33 +1,36 @@
----
-# Jekyll Front Matter
----
+--- # Jekyll Front Matter ---
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>{{ site.data.basics.title }}</title>
+    <title></title>
     <!--TODO: Add more meta tags for SEO -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/bulma.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <link rel="stylesheet" type="text/css" href="css/header_styles.css">
-    <link rel="stylesheet" type="text/css" href="css/resume_styles.css">
+
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 
 <body>
     <div class="container">
         {% include header.html %}
-
-        <div id="resumeSection">
-            {% include bulma_resume.html %}
+        <div class="columns">
+            <div class="column is-narrow">
+                <p class="title">Experience</p>
+                {% for experience in site.data.resume.experience %} {% include experience_snippet.html experience=experience %} {% endfor
+                %}
+            </div>
         </div>
+
+        <div>
+                <p class="title">Projects</p>
+        </div>
+    </div>
 </body>
-<script src="js/helper.js"></script>
-<script src="js/custom.js"></script>
 
 </html>

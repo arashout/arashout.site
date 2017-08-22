@@ -151,7 +151,7 @@ body {
 }
 
 a {
-  color: #00d1b2;
+  color: currentColor;
   cursor: pointer;
   text-decoration: none;
 }
@@ -161,7 +161,7 @@ a strong {
 }
 
 a:hover {
-  color: #363636;
+  color: lightseagreen;
 }
 
 code {

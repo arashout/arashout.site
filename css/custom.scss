@@ -1,0 +1,17 @@
+---
+---
+.socials-list {
+    li {
+        display: inline;
+    }
+}
+.job-highlights{
+    list-style-type: circle;
+}
+
+.hidden {
+    display: none;   
+}
+.hidden-parent:hover .hidden{
+    display: flex;
+}
