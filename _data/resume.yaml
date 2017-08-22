@@ -144,7 +144,7 @@ projects:
       - CSS
 
   - name: Water Jet Propelled Vehicle
-    writeup: 'http://arashout.site/euro.html'
+    writeup: 'http://arashout.site/waterjetVehicle.html'
     summary: >-
       Built a water-jet propelled RC car that came 1st place out of 20 teams in
       competition, scoring major points for a time marching simulation that

@@ -20,7 +20,8 @@
 
     <!-- Right side -->
     <div class="level-right">
-        <p class="level-item"><a>Experience</a></p>
-        <p class="level-item"><a>Projects</a></p>
+        <p class="level-item"><a href="{{ site.url }}" >Home</a></p>
+        <p class="level-item"><a href="{{ #experience | prepend: site.url }}">Experience</a></p>
+        <p class="level-item"><a href="{{ #projects | prepend: site.url }}">Projects</a></p>
     </div>
 </nav>

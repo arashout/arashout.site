@@ -21,10 +21,8 @@ $page-width : 900px;
     font-size: 1.1rem;
 }
 .job-highlights{
-    list-style-type: circle;
     max-width: $page-width - 100px;
 }
-
 
 .projects-container{
     display: flex;
@@ -41,6 +39,7 @@ $page-width : 900px;
     min-width: 250px;
 }
 
+/* Utility classes  */
 .hidden {
     display: none;   
 }
@@ -50,4 +49,11 @@ $page-width : 900px;
 
 .float-right{
     float: right;
+}
+
+.with-bullets{
+    list-style-type: circle;
+}
+.colour-link{
+    color: blue;
 }
