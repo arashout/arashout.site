@@ -10,3 +10,4 @@ Built with Jekyll, YAML and Bulma (CSS).
 - Add all projects to the site [ ]
     - Possibly split up projects in terms of size or duration?
 - Add an aboutme or FAQ section [ ]
+- Add extra-curricular section for UBC Baja [ ]
