@@ -122,7 +122,7 @@ projects:
       - Eigen
   - name: Improved UBC Transcript
     source: 'https://github.com/arashout/ImprovedUBCTranscript'
-    writeup: 'improvedUBCTranscript.html'
+    writeup: 'http://arashout.site/posts/improved-ubc-transcript'
     summary: >-
       A JavaScript bookmarklet that users can easily click to enhance the
       unofficial UBC Transcript by removing clutter and adding course
@@ -165,3 +165,11 @@ projects:
     - MATLAB
     - SolidWorks
     - 3D Printing
+  
+extra-curriculars:
+  - name: UBC Baja
+    writeup: 'http://arashout.site/baja.html'
+    summary: >-
+      'UBC Baja is a student-run engineering design team focused on designing, building and racing an off-road vehicle. As a member,
+      I got hands on experience with several different facets of the design process.'
+    
