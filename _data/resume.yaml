@@ -131,9 +131,20 @@ projects:
       - Python
       - Flask
       - JavaScript
+  - name: PyQt Database App
+    source: https://github.com/arashout/DatabaseSearchGUI
+    gif: http://arashout.site/gifs/DatabaseApp.gif
+    summary: >-
+      A database app I developed while working at Andritz to help interns quickly
+      search for SAP materials, allowing them to save time since they don't have to 
+      fire up SAPs very large program for a small task
+    technologies:
+      - Python
+      - Qt
+      - Sqlite
   - name: 8 Puzzle Solver
     source: https://github.com/arashout/8PuzzleSolver
-    writeup: ttps://github.com/arashout/8PuzzleSolver
+    writeup: https://github.com/arashout/8PuzzleSolver
     demo: https://arashout.github.io/8PuzzleSolver
     summary: >-
       A web application that efficiently solves a random 8-puzzles
