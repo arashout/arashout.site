@@ -155,7 +155,7 @@ projects:
       - CSS
 
   - name: Water Jet Propelled Vehicle
-    writeup: 'http://arashout.site/waterjetVehicle.html'
+    writeup: 'http://arashout.site/posts/water-jet-vehicle'
     summary: >-
       Built a water-jet propelled RC car that came 1st place out of 20 teams in
       competition, scoring major points for a time marching simulation that
@@ -168,7 +168,7 @@ projects:
   
 extra-curriculars:
   - name: UBC Baja
-    writeup: 'http://arashout.site/baja.html'
+    writeup: 'http://arashout.site/posts/ubc-baja'
     summary: >-
       'UBC Baja is a student-run engineering design team focused on designing, building and racing an off-road vehicle. As a member,
       I got hands on experience with several different facets of the design process.'
