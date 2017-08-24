@@ -14,3 +14,5 @@ Built with Jekyll, YAML and Bulma (CSS).
 - [ ] Add headlines to each project, to sell them to the reader
     - Headline in resume.yaml
     - Subtitle in html
+- [ ] Make clicking on project links open new page
+- [ ] Add a link to PDF resume
