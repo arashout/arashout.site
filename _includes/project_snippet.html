@@ -5,24 +5,24 @@
     <div class="tags">
         {% if include.project.demo != null %}
         <span class="tag is-danger">
-                <a href="{{ include.project.demo }}">Demo</a>
+                <a href="{{ include.project.demo }}" target="_blank">Demo</a>
         </span>
         {% endif %}
         {% if include.project.publisher != null %}
         <span class="tag is-success">
-            <a href="{{ include.project.publishLink }}">{{ include.project.publisher }}</a>
+            <a href="{{ include.project.publishLink }}" target="_blank">{{ include.project.publisher }}</a>
         </span>
         {% endif %}
 
         {% if include.project.writeup != null %}
         <span class="tag is-warning">
-            <a href="{{ include.project.writeup }}">Write-up</a>
+            <a href="{{ include.project.writeup }}" target="_blank">Write-up</a>
         </span>
         {% endif %}
 
         {% if include.project.source != null %}
         <span class="tag is-dark">
-            <a href="{{ include.project.source }}">Github</a>
+            <a href="{{ include.project.source }}" target="_blank">Github</a>
         </span>
         {% endif %}
         {% for tech in include.project.technologies %}

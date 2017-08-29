@@ -7,10 +7,10 @@ profiles:
         username: arash.out@gmail.com
         url: 'mailto:arash'
         html: >-
-            <a href='mailto:arash.out@gmail.com'>
-            <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+            <a href='mailto:arash.out@gmail.com' title='Email me'>
+            <span class='fa-stack fa-lg'>
+            <i class='fa fa-circle fa-stack-2x'></i>
+            <i class='fa fa-envelope fa-stack-1x fa-inverse'></i>
             </span>
             </a>
     -
@@ -18,7 +18,7 @@ profiles:
         username: arashout
         url: https://github.com/arashout
         html: >-
-            <a href='https://github.com/arashout'>
+            <a href='https://github.com/arashout' title='Github'>
             <span class='fa-stack fa-lg'>
             <i class='fa fa-circle fa-stack-2x'></i>
             <i class='fa fa-github fa-stack-1x fa-inverse'></i>
@@ -29,10 +29,21 @@ profiles:
         username: arashout
         url: https://www.linkedin.com/in/arashout/
         html: >-
-            <a href='https://www.linkedin.com/in/arashout/'>
+            <a href='https://www.linkedin.com/in/arashout/' title='LinkedIn'>
             <span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+    -
+        website: Resume
+        username: Arash
+        url: http://arashout.site/pdf/arash_resume.pdf
+        html: >-
+            <a href='http://arashout.site/pdf/arash_resume.pdf' title='PDF Resume'>
+            <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-file-pdf-o fa-stack-1x fa-inverse"></i>
             </span>
             </a>
 experiences:
@@ -133,7 +144,7 @@ projects:
       - JavaScript
   - name: PyQt Database App
     source: https://github.com/arashout/DatabaseSearchGUI
-    gif: http://arashout.site/gifs/DatabaseApp.gif
+    gif: http://arashout.site/gif/DatabaseApp.gif
     summary: >-
       A database app I developed while working at Andritz to help interns quickly
       search for SAP materials, allowing them to save time since they don't have to 
