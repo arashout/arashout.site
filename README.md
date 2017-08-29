@@ -14,4 +14,3 @@ Built with Jekyll, YAML and Bulma (CSS).
 - [ ] Add headlines to each project, to sell them to the reader
     - Headline in resume.yaml
     - Subtitle in html
-- [ ] Add a link to PDF resume
