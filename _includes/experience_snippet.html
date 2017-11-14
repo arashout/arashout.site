@@ -10,5 +10,11 @@
             <li>{{ highlight }}</li>
             {% endfor %}
         </ul>
+
+    <div class="tags">
+        {% for tech in include.project.technologies %}
+        <span class="tag">{{ tech }}</span>
+        {% endfor %}
+    </div>
     </div>
 </div>

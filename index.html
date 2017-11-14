@@ -18,7 +18,7 @@
     <meta property="og:description" content="Mechanical Engineer => Software Engineer"/>
 
     {% include styles_snippet.html %}
-    {% include analytics-snippet.html %}
+    {% if jekyll.environment == 'production' and site.google_analytics %} {% include google_analytics_snippet.html %} {% endif %}
 </head>
 
 <body>

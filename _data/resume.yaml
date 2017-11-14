@@ -52,7 +52,19 @@ experiences:
     startDate: 2017-09-12T00:00:00.000Z
     endDate:
     highlights:
-
+      - >-
+        Worked as a full-stack engineer primarily working on our client dashboard
+        built with AngularJS and TypeScript, duties included:
+        - Developing new features that often required implementing/configuring
+          api-endpoints server-side written
+        - Extensively writing unit tests + integration tests for both back-end and front-end components
+        - Going through JIRA and independently making bug-fixes
+    technologies:
+      - Angular
+      - Golang
+      - TypeScript
+      - Docker
+        
   - company: Andritz Ltd.
     position: Engineering Co-op Student
     startDate: 2016-08-22T00:00:00.000Z
@@ -64,6 +76,12 @@ experiences:
       - >-
         Developed Python database app with SQLite to reduce time searching for
         SAP materials by 50%
+    technologies:
+      - Python
+      - VBA
+      - SAP
+      - Excel
+
   - company: Canadian Logistics
     position: Data Analyst Intern
     startDate: 2015-12-27T00:00:00.000Z
@@ -78,6 +96,10 @@ experiences:
       - >-
         Utilized Excel pivot tables to summarize, categorize, and present data
         allowing the owner to make informed decisions about company operations
+    technologies:
+      - Python
+      - VBA
+      - Excel
 
 projects:
   - name: RoboRooney
@@ -87,6 +109,7 @@ projects:
       using the MyLocalPitch API and help arrange scrimmages on slack
     technologies:
       - Go
+      - Slack
       - Heroku
 
   - name: Brightspace API Search
