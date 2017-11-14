@@ -55,10 +55,13 @@ experiences:
       - >-
         Worked as a full-stack engineer primarily working on our client dashboard
         built with AngularJS and TypeScript, duties included:
-        - Developing new features that often required implementing/configuring
-          api-endpoints server-side written
-        - Extensively writing unit tests + integration tests for both back-end and front-end components
-        - Going through JIRA and independently making bug-fixes
+      - >- 
+        • Developing new features that often required implementing/configuring 
+        api-endpoints server-side written
+      - >- 
+        • Extensively writing unit tests + integration tests for both back-end and front-end components
+      - >- 
+        • Going through JIRA and independently making bug-fixes as required
     technologies:
       - Angular
       - Golang
