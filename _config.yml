@@ -4,3 +4,5 @@ description: ""
 baseurl: ""
 url: "http://arashout.site/"
 gitub_username: arashout
+# Google Analytics
+google_analytics: UA-109683244-1
