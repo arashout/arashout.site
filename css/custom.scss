@@ -20,6 +20,10 @@ $page-width : 900px;
     font-weight: normal;
     font-size: 1.1rem;
 }
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
 .job-highlights{
     max-width: $page-width - 100px;
 }
