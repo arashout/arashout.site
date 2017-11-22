@@ -4,16 +4,39 @@ title: Improved UBC Transcript
 permalink: posts/improved-ubc-transcript
 ---
 
+<h1>What it does:</h1>
+<p>
+Beautifies the lacking unofficial UBC transcript with extra information and better formatting.
+</p>
+<h1>How it does this:</h1>
+<p>It does this in several ways:</p>
+<ul>
+    <li>Adding a course names columns</li>
+    <li>Removing unnecessary widgets</li>
+    <li>Spacing items out better and increasing the width of the table </li>
+    <li>Allow you to manually edit course names</li>
+    <li>Optionally allow you to remove unnecessary columns + rows</li>
+</ul>
+
 <h1>Instructions</h1>
 <ol class="with-bullets">
     <li>
-        Ensure <a class="colour-link" href="https://arashout.pythonanywhere.com/">this page</a> is online (Won't work otherwise) 
+        <p>Ensure <a class="colour-link" href="https://arashout.pythonanywhere.com/">this page</a> is online (Won't work otherwise) </p>
+        <p>NOTE: This bookmarklet works best with Google Chrome and hasn't been tested with other browsers!</p>
     </li>
     <li>
-        Drag --><a class="colour-link" href="javascript:(function(){'use strict';function a(y){const z=/ /g;return y.replace(z,'')}const d='1.2',e='version_key',g=Object.freeze({COURSE_CODE:0,LETTER_GRADE:3}),h=Object.freeze({SECTION:1,STANDING:10}),j=Object.freeze({KEEP_NO_GRADE_ROW:1,KEEP_SECTION_COLUMN:2,KEEP_STANDING_COLUMN:4}),k=document.querySelector('#iframe-main').contentWindow.document;(function(y){['#UbcHeaderWrapper','#UbcBottomInfoWrapper','#UbcUtilNavWrapper'].forEach(function(z){document.querySelector(z).remove()}),['#calculator_title','#calculator_title_text','.ui-tabs-nav'].forEach(function(z){y.querySelector(z).remove()}),y.querySelector('h1').setAttribute('style','margin:10px 0 -20px 70px;'),y.querySelector('#header-invisible img').setAttribute('style','margin-bottom: 15px;'),y.querySelector('#tabs').setAttribute('style','margin: 0px auto; width:800px')})(k);const l=k.querySelector('#allSessionsGrades'),m=l.children[0],o=m.children,p=o.length;let q=[];const r=` 001:Keep courses with no grades\n 010:Keep the section column\n 100:Keep the standing column\n 0:Default behaviour(Remove all clutter)\n e.g Type 011 to enable the first 2 options `,s=prompt(r,'0'),t=parseInt(s,2),u=function(y){return{removeNoGradeRow:!(y&j.KEEP_NO_GRADE_ROW),removeSectionColumn:!(y&j.KEEP_SECTION_COLUMN),removeStandingColumn:!(y&j.KEEP_STANDING_COLUMN)}}(t);console.log(u);for(let y=o.length-1;0<=y;y--){const z=o[y];console.log(z);const A=z.children[g.LETTER_GRADE],B=A.innerText;if(u.removeNoGradeRow&&''===B){m.removeChild(z);continue}const C=z.children[g.COURSE_CODE],D=a(C.innerText);''!==D&&'Course'!==D&&q.push(D),console.log(z.children[h.SECTION]),console.log(z.children[h.STANDING]),u.removeStandingColumn&&z.removeChild(z.children[h.STANDING]),u.removeSectionColumn&&z.removeChild(z.children[h.SECTION]);let E=z.insertCell(1);E.style.textAlign='center',0===y?(E.innerText='Course Name',E.classList.add('listHeader')):(E.id=D,E.classList.add('listRow'))}let v='';for(let y=0;y<q.length;y++){const z=q[y];v+=`c${y}=${z}&`}v+=`${e}=${d}`;const x='https://arashout.pythonanywhere.com/courses'+'?'+v;fetch(x,{method:'GET',headers:{Accept:'application/json, text/plain, */*','Content-Type':'application/json'},mode:'cors'}).then(y=>{return y.json()}).catch(y=>{console.log(y)}).then(y=>{y[e]!==d&&alert(` You do not have the latest version of the bookmarklet which means it may not work properly or you may be missing new features.\n Get the latest version from:\n${'http://arashout.site/posts/improved-ubc-transcript'}\n\n Version:${d}\tNewest Version:${y[e]}`),q.forEach(z=>{const A=k.getElementById(z);A.contentEditable='true',A.innerText=y[z]})})})();">UBCBeautifier</a> onto your bookmarks bar
+        <p>Drag --><a class="colour-link" href="javascript:(function(){'use strict';function a(y){const z=/ /g;return y.replace(z,'')}const d='1.2',e='version_key',g=Object.freeze({COURSE_CODE:0,LETTER_GRADE:3}),h=Object.freeze({SECTION:1,STANDING:10}),j=Object.freeze({KEEP_NO_GRADE_ROW:1,KEEP_SECTION_COLUMN:2,KEEP_STANDING_COLUMN:4}),k=document.querySelector('#iframe-main').contentWindow.document;(function(y){['#UbcHeaderWrapper','#UbcBottomInfoWrapper','#UbcUtilNavWrapper'].forEach(function(z){document.querySelector(z).remove()}),['#calculator_title','#calculator_title_text','.ui-tabs-nav'].forEach(function(z){y.querySelector(z).remove()}),y.querySelector('h1').setAttribute('style','margin:10px 0 -20px 70px;'),y.querySelector('#header-invisible img').setAttribute('style','margin-bottom: 15px;'),y.querySelector('#tabs').setAttribute('style','margin: 0px auto; width:800px')})(k);const l=k.querySelector('#allSessionsGrades'),m=l.children[0],o=m.children,p=o.length;let q=[];const r=` 001:Keep courses with no grades\n 010:Keep the section column\n 100:Keep the standing column\n 0:Default behaviour(Remove all clutter)\n e.g Type 011 to enable the first 2 options `,s=prompt(r,'0'),t=parseInt(s,2),u=function(y){return{removeNoGradeRow:!(y&j.KEEP_NO_GRADE_ROW),removeSectionColumn:!(y&j.KEEP_SECTION_COLUMN),removeStandingColumn:!(y&j.KEEP_STANDING_COLUMN)}}(t);console.log(u);for(let y=o.length-1;0<=y;y--){const z=o[y];console.log(z);const A=z.children[g.LETTER_GRADE],B=A.innerText;if(u.removeNoGradeRow&&''===B){m.removeChild(z);continue}const C=z.children[g.COURSE_CODE],D=a(C.innerText);''!==D&&'Course'!==D&&q.push(D),console.log(z.children[h.SECTION]),console.log(z.children[h.STANDING]),u.removeStandingColumn&&z.removeChild(z.children[h.STANDING]),u.removeSectionColumn&&z.removeChild(z.children[h.SECTION]);let E=z.insertCell(1);E.style.textAlign='center',0===y?(E.innerText='Course Name',E.classList.add('listHeader')):(E.id=D,E.classList.add('listRow'))}let v='';for(let y=0;y<q.length;y++){const z=q[y];v+=`c${y}=${z}&`}v+=`${e}=${d}`;const x='https://arashout.pythonanywhere.com/courses'+'?'+v;fetch(x,{method:'GET',headers:{Accept:'application/json, text/plain, */*','Content-Type':'application/json'},mode:'cors'}).then(y=>{return y.json()}).catch(y=>{console.log(y)}).then(y=>{y[e]!==d&&alert(` You do not have the latest version of the bookmarklet which means it may not work properly or you may be missing new features.\n Get the latest version from:\n${'http://arashout.site/posts/improved-ubc-transcript'}\n\n Version:${d}\tNewest Version:${y[e]}`),q.forEach(z=>{const A=k.getElementById(z);A.contentEditable='true',A.innerText=y[z]})})})();">UBCBeautifier</a> onto your bookmarks bar</p>
     </li>
-    <li>Navigate to the <a class="colour-link" href="https://ssc.adm.ubc.ca/sscportal/servlets/SRVSSCFramework?function=SessGradeRpt">SSC grades page</a></li>
-    <li>Click on the bookmark to run it</li>
+    <li>
+        <p>
+        Navigate to the <a class="colour-link" href="https://ssc.adm.ubc.ca/sscportal/servlets/SRVSSCFramework?function=SessGradeRpt">SSC grades page</a>
+        </p>
+    </li>
+    <li>
+        <p>
+        Click on the bookmark to run it
+        </p>
+    </li>
 </ol>
 
 <a class="colour-link" href="https://github.com/arashout/ubcapi">Source Code</a><br>
