@@ -23,6 +23,13 @@ $page-width : 900px;
     flex-direction: column;
     width: $page-width - 100px;
 }
+.card-dropdown-icon {
+    margin: auto;
+    padding: .5em;
+}
+.card-content {
+    transition: opacity 0.5s linear;
+}
 .card-header-title{
     font-weight: normal;
     font-size: 1.1rem;

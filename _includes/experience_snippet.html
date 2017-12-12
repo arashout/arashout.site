@@ -1,10 +1,17 @@
+{% assign jobID = include.experience.position | append: include.experience.company | replace:' ','' %}
 <div class="card">
     <header class="card-header">
         <p class="card-header-title">{{ include.experience.position }}</p>
         <p class="card-header-title">{{ include.experience.company }}</p>
         <p class="card-header-title">{{ include.experience.startDate | date: "%b, %Y" }} - {{ include.experience.endDate | date: "%b, %Y" }}</p>
+        <span 
+            class="card-dropdown-icon"
+            data-refID="{{ jobID }}"
+            onclick="toggleContent(this)">
+            <i class="fa fa-plus-square-o fa-lg"></i>
+        </span>
     </header>
-    <div class="card-content hidden">
+    <div id="{{ jobID }}" class="card-content hidden">
         <ul class="job-highlights">
             {% for highlight in include.experience.highlights %}
             <li>{{ highlight }}</li>
@@ -18,5 +25,4 @@
             {% endfor %}
         </div>
     </footer>
-
 </div>

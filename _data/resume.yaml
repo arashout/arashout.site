@@ -81,7 +81,7 @@ experiences:
       - Docker
       - Micro-Services
         
-  - company: Andritz Ltd.
+  - company: Andritz Ltd
     position: Engineering Co-op Student
     startDate: 2016-08-22T00:00:00.000Z
     endDate: 2016-12-20T00:00:00.000Z
@@ -122,7 +122,7 @@ projects:
     source: 'https://github.com/arashout/RoboRooneyStarter'
     summary: >-
       Slack-bot to quickly scan all available openings at football pitches
-      using the MyLocalPitch API and help arrange scrimmages on slack
+      using the MyLocalPitch API and help arrange scrimmages through Slack
     technologies:
       - Go
       - Slack
@@ -138,18 +138,41 @@ projects:
       - Angular
       - Typescript
       - REST API
-      - Datatables
-      - JQuery
   - name: JobBot
     source: 'https://github.com/arashout/JobBot'
     summary: >-
-      Robot that automatically searches for jobs using the Indeed API and
-      applies to them using NLP to generate relevant cover letters.
+      Robot that can automatically search and apply to jobs on Angel and Indeed
+      with a custom cover letters based on a template and provided keywords.
+      This bot helped me get my job at Ravelin! 
     technologies:
       - Python
       - Selenium
       - XPath
       - NLP
+
+  - name: Blob Combat Simulation
+    source: 'https://github.com/arashout/BlobCombatSimulator'
+    summary: >-
+      Developed a simulation where 'blobs' evolve to fight using neural networks
+      and different genetic selection algorithms
+    technologies:
+      - C++
+      - SFML
+      - QtCreator
+      - Eigen
+
+  - name: Improved UBC Transcript
+    source: 'https://github.com/arashout/ImprovedUBCTranscript'
+    writeup: 'http://arashout.site/posts/improved-ubc-transcript'
+    summary: >-
+      Bookmarklet that enhances and beautifies the UBC unofficial transcript which 
+      gets about 450 hits per month and has been very well recieved by UBC community on Reddit.
+    technologies:
+      - Python
+      - Flask
+      - TypeScript
+
+old-projects:
   - name: Strength Journal
     publishLink: >-
       https://play.google.com/store/apps/details?id=site.arashout.workoutnotebook
@@ -163,6 +186,7 @@ projects:
       - Java
       - XML
       - SQLite
+
   - name: Element Eraser
     publishLink: >-
       https://chrome.google.com/webstore/detail/element-eraser/cflkmoejpjmceaiahbjdkmehceccknce?hl=en
@@ -175,27 +199,7 @@ projects:
     technologies:
       - JavaScript
       - Chrome API
-  - name: Blob Combat Simulation
-    source: 'https://github.com/arashout/BlobCombatSimulator'
-    summary: >-
-      Developed a simulation where 'blobs' evolve to fight using neural networks
-      and different genetic selection algorithms
-    technologies:
-      - C++
-      - SFML
-      - QtCreator
-      - Eigen
-  - name: Improved UBC Transcript
-    source: 'https://github.com/arashout/ImprovedUBCTranscript'
-    writeup: 'http://arashout.site/posts/improved-ubc-transcript'
-    summary: >-
-      A JavaScript bookmarklet that users can easily click to enhance the
-      unofficial UBC Transcript by removing clutter and adding course
-      information to grades. Retrieves information from web app with REST API,
-    technologies:
-      - Python
-      - Flask
-      - JavaScript
+
   - name: PyQt Database App
     source: https://github.com/arashout/DatabaseSearchGUI
     gif: http://arashout.site/gif/DatabaseApp.gif
@@ -207,6 +211,7 @@ projects:
       - Python
       - Qt
       - Sqlite
+
   - name: 8 Puzzle Solver
     source: https://github.com/arashout/8PuzzleSolver
     writeup: https://github.com/arashout/8PuzzleSolver
@@ -230,7 +235,7 @@ projects:
     - MATLAB
     - SolidWorks
     - 3D Printing
-  
+
 extra-curriculars:
   - name: UBC Baja
     writeup: 'http://arashout.site/posts/ubc-baja'
