@@ -1,4 +1,4 @@
-<div class="card hidden-parent">
+<div class="card">
     <header class="card-header">
         <p class="card-header-title">{{ include.experience.position }}</p>
         <p class="card-header-title">{{ include.experience.company }}</p>
@@ -11,9 +11,12 @@
             {% endfor %}
         </ul>
     </div>
-    <div class="tags">
-        {% for tech in include.experience.technologies %}
-        <span class="tag">{{ tech }}</span>
-        {% endfor %}
-    </div>
+    <footer class="card-footer">
+        <div class="tags">
+            {% for tech in include.experience.technologies %}
+            <span class="tag">{{ tech }}</span>
+            {% endfor %}
+        </div>
+    </footer>
+
 </div>

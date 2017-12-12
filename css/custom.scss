@@ -5,7 +5,10 @@ $page-width : 900px;
 .container {
     max-width: $page-width;
 }
+
 .hero-body {
+    padding-top: 1em;
+    padding-bottom: 0px;
     padding-left: 0px;
 }
 
@@ -18,6 +21,7 @@ $page-width : 900px;
 .card {
     display: flex;
     flex-direction: column;
+    width: $page-width - 100px;
 }
 .card-header-title{
     font-weight: normal;
@@ -45,9 +49,6 @@ $page-width : 900px;
 /* Utility classes  */
 .hidden {
     display: none;   
-}
-.hidden-parent:hover .hidden{
-    display: flex;
 }
 
 .float-right{

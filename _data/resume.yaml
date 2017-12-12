@@ -48,9 +48,21 @@ profiles:
             </a>
 experiences:
   - company: Ravelin 
+    position: Junior Software Engineer
+    startDate: 2017-12-12T00:00:00.000Z
+    endDate: 
+    highlights:
+    technologies:
+      - Angular
+      - Golang
+      - TypeScript
+      - Docker
+      - Micro-Services
+
+  - company: Ravelin 
     position: Software Engineering Intern
     startDate: 2017-09-12T00:00:00.000Z
-    endDate:
+    endDate: 2017-12-12T00:00:00.000Z
     highlights:
       - >-
         Worked as a full-stack engineer primarily working on our client dashboard
@@ -75,10 +87,10 @@ experiences:
     endDate: 2016-12-20T00:00:00.000Z
     highlights:
       - >-
-        Using SAP API and VBA created a suite of Excel tools for Project
+        • Using SAP API and VBA created a suite of Excel tools for Project
         Managers that saved them 10 hours every week
       - >-
-        Developed Python database app with SQLite to reduce time searching for
+        • Developed Python database app with SQLite to reduce time searching for
         SAP materials by 50%
     technologies:
       - Python
@@ -92,13 +104,13 @@ experiences:
     endDate: 2016-09-05T00:00:00.000Z
     highlights:
       - >-
-        Replaced manual processes with Python to efficiently consolidate all
+        • Replaced manual processes with Python to efficiently consolidate all
         daily incoming data, saving 2 hours per day
       - >-
-        Improved hiring practices by analyzing compiled data to demonstrate the
+        • Improved hiring practices by analyzing compiled data to demonstrate the
         low retention rates associated with hiring through labor agencies
       - >-
-        Utilized Excel pivot tables to summarize, categorize, and present data
+        • Utilized Excel pivot tables to summarize, categorize, and present data
         allowing the owner to make informed decisions about company operations
     technologies:
       - Python
