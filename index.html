@@ -27,7 +27,7 @@
         <div class="columns">
             <div class="column is-narrow">
                 <p class="title"><a name="experience"></a>Experience</p>
-                {% for experience in site.data.resume.work %} 
+                {% for experience in site.data.resume.experiences %} 
                 {% include experience_snippet.html experience=experience %} 
                 {% endfor %}
             </div>
@@ -39,6 +39,27 @@
                 {% for project in site.data.resume.projects %}
                 {% include project_snippet.html project=project %} 
                 {% endfor %}
+            </div>
+        </div>
+
+        <div class="blog">
+            <div class="columns">
+                {% if site.posts.size > 0 %}
+                <div class="column is-narrow">
+                    <p class="title"><a name="blog"></a>Blog posts</p>
+                    <ul>
+                        {% for post in site.posts %}
+                        <li>
+                            <a href="{{ post.url }}">
+                                <h2>{{ post.title }}</h2>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% else %}
+                <p>There are no posts available right.</p>
+                {% endif %}
             </div>
         </div>
     </div>
