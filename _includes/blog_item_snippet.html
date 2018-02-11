@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="blog-item">
+        <a href="{{ include.post.url }}">
+            <h2>{{ include.post.title }}</h2>
+        </a>
+        <div class="tags">
+            {% for tag in include.post.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</div>
