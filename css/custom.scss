@@ -1,7 +1,9 @@
----
-# Jekyll Front Matter
----
-$page-width : 900px;
+--- 
+# Jekyll Front Matter 
+--- 
+
+$page-width: 900px;
+
 .container {
     max-width: $page-width;
 }
@@ -23,45 +25,57 @@ $page-width : 900px;
     flex-direction: column;
     width: $page-width - 100px;
 }
+
 .card-dropdown-icon {
     margin: auto;
     padding: .5em;
 }
-.card-header-title{
+
+.card-header-title {
     font-weight: normal;
     font-size: 1.1rem;
 }
-.job-highlights{
+
+.job-highlights {
     max-width: $page-width - 100px;
 }
 
-.projects-container{
+.projects-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.project-wrapper{
+
+.project-wrapper {
     display: flex;
     flex-direction: column;
-
     margin: 10px 0px 10px 0px;
     width: 15vw;
     height: 5w;
     min-width: 250px;
 }
 
-/* Utility classes  */
-.hidden {
-    display: none;   
+.blog-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: $page-width - 100px;
 }
 
-.float-right{
+/* Utility classes  */
+
+.hidden {
+    display: none;
+}
+
+.float-right {
     float: right;
 }
 
-.with-bullets{
+.with-bullets {
     list-style-type: circle;
 }
-.colour-link{
+
+.colour-link {
     color: blue;
 }

@@ -42,26 +42,19 @@
             </div>
         </div>
 
+        {% if site.posts.size > 0 %}
         <div class="blog">
             <div class="columns">
-                {% if site.posts.size > 0 %}
                 <div class="column is-narrow">
                     <p class="title"><a name="blog"></a>Blog posts</p>
-                    <ul>
-                        {% for post in site.posts %}
-                        <li>
-                            <a href="{{ post.url }}">
-                                <h2>{{ post.title }}</h2>
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
+                    {% for post in site.posts %}
+                    {% include blog_item_snippet.html post=post %}
+                    {% endfor %}
                 </div>
-                {% else %}
-                <p>There are no posts available right.</p>
-                {% endif %}
             </div>
         </div>
+        {% endif %}
+
     </div>
 </body>
 
