@@ -1,245 +1,156 @@
+settings:
+  includeSkills: false
 basics:
-    name: Arash Outadi
-    htmlTitle: 'Mechanical Engineer &rArr; Software Engineer'
-profiles:
-    -
-        website: Gmail
-        username: arash.out@gmail.com
-        url: 'mailto:arash'
-        html: >-
-            <a href='mailto:arash.out@gmail.com' title='Email me'>
-            <span class='fa-stack fa-lg'>
-            <i class='fa fa-circle fa-stack-2x'></i>
-            <i class='fa fa-envelope fa-stack-1x fa-inverse'></i>
-            </span>
-            </a>
-    -
-        website: Github
-        username: arashout
-        url: https://github.com/arashout
-        html: >-
-            <a href='https://github.com/arashout' title='Github'>
-            <span class='fa-stack fa-lg'>
-            <i class='fa fa-circle fa-stack-2x'></i>
-            <i class='fa fa-github fa-stack-1x fa-inverse'></i>
-            </span>
-            </a>
-    -
-        website: LinkedIn
-        username: arashout
-        url: https://www.linkedin.com/in/arashout/
-        html: >-
-            <a href='https://www.linkedin.com/in/arashout/' title='LinkedIn'>
-            <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-            </span>
-            </a>
-    -
-        website: Resume
-        username: Arash
-        url: http://arashout.site/pdf/arash_resume.pdf
-        html: >-
-            <a href='http://arashout.site/pdf/arash_resume.pdf' title='PDF Resume'>
-            <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-file-pdf-o fa-stack-1x fa-inverse"></i>
-            </span>
-            </a>
-experiences:
-  - company: Ravelin 
+  name: Arash Outadi
+  label: Programmer
+  email: arash.out@gmail.com
+  phone: null
+  website: 'http://arashout.site'
+  location:
+    address: null
+    postalCode: null
+    city: London
+    countryCode: GB
+    region: London
+    regionCode: null
+  htmlTitle: Mechanical Engineer &rArr; Software Engineer
+  profiles:
+    - website: Gmail
+      username: arash.out@gmail.com
+      url: 'mailto:arash'
+      html: >-
+        <a href='mailto:arash.out@gmail.com' title='Email me'> <span
+        class='fa-stack fa-lg'> <i class='fa fa-circle fa-stack-2x'></i> <i
+        class='fa fa-envelope fa-stack-1x fa-inverse'></i> </span> </a>
+    - website: Github
+      username: arashout
+      url: 'https://github.com/arashout'
+      html: >-
+        <a href='https://github.com/arashout' title='Github'> <span
+        class='fa-stack fa-lg'> <i class='fa fa-circle fa-stack-2x'></i> <i
+        class='fa fa-github fa-stack-1x fa-inverse'></i> </span> </a>
+    - website: LinkedIn
+      username: arashout
+      url: 'https://www.linkedin.com/in/arashout/'
+      html: >-
+        <a href='https://www.linkedin.com/in/arashout/' title='LinkedIn'> <span
+        class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i
+        class="fa fa-linkedin fa-stack-1x fa-inverse"></i> </span> </a>
+    - website: Resume
+      username: Arash
+      url: 'http://arashout.site/pdf/arash_resume.pdf'
+      html: >-
+        <a href='http://arashout.site/pdf/arash_resume.pdf' title='PDF Resume'>
+        <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-file-pdf-o fa-stack-1x fa-inverse"></i> </span> </a>
+work:
+  - company: Ravelin
     position: Junior Software Engineer
-    startDate: 2017-12-12T00:00:00.000Z
+    startDate: 2017-09-12T00:00:00.000Z
     endDate: 
     highlights:
-    technologies:
-      - Angular
-      - Golang
-      - TypeScript
-      - Docker
-      - Micro-Services
-
-  - company: Ravelin 
-    position: Software Engineering Intern
-    startDate: 2017-09-12T00:00:00.000Z
-    endDate: 2017-12-12T00:00:00.000Z
-    highlights:
       - >-
-        Worked as a full-stack engineer primarily working on our client dashboard
-        built with AngularJS and TypeScript, duties included:
+        Full stack engineer who primarily works on the client facing dashboard
+        built with TypeScript, AngularJS and powered by Go micro-services.
+      - >-
+        Resolved 50+ JIRA tickets implementing new features, refactoring legacy code
+        and solving bugs while following sounds software engineering practices.
       - >- 
-        • Developing new features for the dashboard that also often required 
-        implementing/configuring api-endpoints server-side
-      - >- 
-        • Extensively writing unit tests + integration tests for both back-end and front-end components
-      - >- 
-        • Going through JIRA and independently making bug-fixes as required
+        Wrote extensive unit tests and integration tests for both backend and 
+        frontend components. 
+      
     technologies:
       - Angular
       - Golang
       - TypeScript
       - Docker
       - Micro-Services
-        
   - company: Andritz Ltd
     position: Engineering Co-op Student
     startDate: 2016-08-22T00:00:00.000Z
     endDate: 2016-12-20T00:00:00.000Z
     highlights:
       - >-
-        • Using SAP API and VBA created a suite of Excel tools for Project
-        Managers that saved them 10 hours every week
+        Using SAP API and VBA created a suite of Excel tools for Project
+        Managers saving them 10 hours every week
       - >-
-        • Developed Python database app with SQLite to reduce time searching for
+        Developed Python database app with SQLite to reduce time searching for
         SAP materials by 50%
     technologies:
       - Python
       - VBA
       - SAP
       - Excel
-
   - company: Canadian Logistics
     position: Data Analyst Intern
     startDate: 2015-12-27T00:00:00.000Z
     endDate: 2016-09-05T00:00:00.000Z
     highlights:
       - >-
-        • Replaced manual processes with Python to efficiently consolidate all
+        Replaced manual processes with Python to efficiently consolidate all
         daily incoming data, saving 2 hours per day
       - >-
-        • Improved hiring practices by analyzing compiled data to demonstrate the
+        Improved hiring practices by analyzing compiled data to demonstrate the
         low retention rates associated with hiring through labor agencies
       - >-
-        • Utilized Excel pivot tables to summarize, categorize, and present data
+        Utilized Excel pivot tables to summarize, categorize, and present data
         allowing the owner to make informed decisions about company operations
     technologies:
       - Python
       - VBA
       - Excel
-
+education: 
+  -
+    institution: University of British Columbia
+    location: 
+        city: Vancouver
+        regionCode: BC
+    studyType: Bachelor of Applied Science
+    startDate: 2013-09-07
+    endDate: 2019-05-01
+    gpa: 3.6/4.3
 projects:
-  - name: RoboRooney
-    source: 'https://github.com/arashout/RoboRooneyStarter'
-    summary: >-
-      Slack-bot to quickly scan all available openings at football pitches
-      using the MyLocalPitch API and help arrange scrimmages through Slack
-    technologies:
-      - Go
-      - Slack
-      - Heroku
-
-  - name: Brightspace API Search
-    source: 'https://github.com/arashout/BrightSpaceAPIClient'
-    summary: >-
-      A web app that allows you to easily view, save and download 
-      datasets using Brightspace APIs
-    technologies:
-      - Go
-      - Angular
-      - Typescript
-      - REST API
   - name: JobBot
     source: 'https://github.com/arashout/JobBot'
     summary: >-
-      Robot that can automatically search and apply to jobs on Angel and Indeed
-      with a custom cover letters based on a template and provided keywords.
-      This bot helped me get my job at Ravelin! 
+      The bot that landed me my job at Ravelin! It's automatically able
+      to apply to job listings using personalized cover letter based on 
+      keywords from the job description. It also got passed many 
+      screening questions using NLP techniques.
     technologies:
       - Python
       - Selenium
       - XPath
       - NLP
-
+  - name: Improved UBC Transcript
+    source: 'https://github.com/arashout/ImprovedUBCTranscript'
+    writeup: 'http://arashout.site/posts/improved-ubc-transcript'
+    summary: >-
+      Bookmarklet that enhances and beautifies the unofficial UBC transcript,
+      it gets about 450 hits per month and is included as a sidebar resource
+      on the r/UBC subreddit!
+    technologies:
+      - Python
+      - Flask
+      - TypeScript
+      - MongoDB
   - name: Blob Combat Simulation
     source: 'https://github.com/arashout/BlobCombatSimulator'
     summary: >-
-      Developed a simulation where 'blobs' evolve to fight using neural networks
-      and different genetic selection algorithms
+      Combat simulation where 'blobs' evolve over time using 
+      neural networks and genetic algorithms. Includes fast-forward
+      button to significantly reduce training time.
     technologies:
       - C++
       - SFML
       - QtCreator
       - Eigen
-
-  - name: Improved UBC Transcript
-    source: 'https://github.com/arashout/ImprovedUBCTranscript'
-    writeup: 'http://arashout.site/posts/improved-ubc-transcript'
+  - name: RoboRooney
+    source: 'https://github.com/arashout/RoboRooneyStarter'
     summary: >-
-      Bookmarklet that enhances and beautifies the UBC unofficial transcript which 
-      gets about 450 hits per month and has been very well recieved by UBC community on Reddit.
+      Slack-bot to quickly scan all available openings at football pitches using
+      the MyLocalPitch API and help arrange soccer scrimmages through Slack
     technologies:
-      - Python
-      - Flask
-      - TypeScript
-
-old-projects:
-  - name: Strength Journal
-    publishLink: >-
-      https://play.google.com/store/apps/details?id=site.arashout.workoutnotebook
-    publisher: Google Play Store
-    source: 'https://github.com/arashout/StrengthJournal'
-    summary: >-
-      An Android workout tracker that let’s you jump straight into recording
-      your exercises
-    technologies:
-      - Kotlin
-      - Java
-      - XML
-      - SQLite
-
-  - name: Element Eraser
-    publishLink: >-
-      https://chrome.google.com/webstore/detail/element-eraser/cflkmoejpjmceaiahbjdkmehceccknce?hl=en
-    publisher: Chrome Web Store
-    source: 'https://github.com/arashout/ElementEraser'
-    summary: >-
-      A chrome extension that automatically removes any content that the user
-      does not want to see. Furthermore users can save multiple profiles for any
-      website
-    technologies:
-      - JavaScript
-      - Chrome API
-
-  - name: PyQt Database App
-    source: https://github.com/arashout/DatabaseSearchGUI
-    gif: http://arashout.site/gif/DatabaseApp.gif
-    summary: >-
-      A database app I developed while working at Andritz to help interns quickly
-      search for SAP materials, allowing them to save time since they don't have to 
-      fire up SAPs very large program for a small task
-    technologies:
-      - Python
-      - Qt
-      - Sqlite
-
-  - name: 8 Puzzle Solver
-    source: https://github.com/arashout/8PuzzleSolver
-    writeup: https://github.com/arashout/8PuzzleSolver
-    demo: https://arashout.github.io/8PuzzleSolver
-    summary: >-
-      A web application that efficiently solves a random 8-puzzles
-      using A* search and priority queues. Furthermore the solution to
-      each puzzle is animated using CSS transitions
-    technologies:
-      - Javascript
-      - CSS
-
-  - name: Water Jet Propelled Vehicle
-    writeup: 'http://arashout.site/posts/water-jet-vehicle'
-    summary: >-
-      Built a water-jet propelled RC car that came 1st place out of 20 teams in
-      competition, scoring major points for a time marching simulation that
-      predicted vehicle kinematics to within 12% accuracy,
-    technologies: 
-    - C
-    - MATLAB
-    - SolidWorks
-    - 3D Printing
-
-extra-curriculars:
-  - name: UBC Baja
-    writeup: 'http://arashout.site/posts/ubc-baja'
-    summary: >-
-      'UBC Baja is a student-run engineering design team focused on designing, building and racing an off-road vehicle. As a member,
-      I got hands on experience with several different facets of the design process.'
-    
+      - Go
+      - Slack
+      - Heroku
