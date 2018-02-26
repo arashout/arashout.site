@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Keep A Daily Log
+title: Keeping A Daily Log
 permalink: posts/keep-a-daily-log
 date: 2018-02-20 00:00:00 +0000
 tags:
