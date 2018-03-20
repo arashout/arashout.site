@@ -1,15 +1,17 @@
 ---
 layout: post
 title: Accidental Static Class Variables
-permalink: posts/
-date: 2018-03-20
-tags: ['Python']
+permalink: posts/accidental-static-class-variables
+date: 2018-03-20 00:00:00 +0000
+tags: 
+- Python
 ---
 
 Using default argument parameters on the `__init__` method on your class will create shared class variables instead of instance variables as you might expect!
 It is best demonstrated through some code snippets below:
 
 1. Normal/Expected behavior when we use immutable primitives as default parameters
+
 ```python3
 class Foo:
     def __init__(self, bar = 3):
@@ -20,8 +22,11 @@ print(f1.bar) # 3
 f2 = Foo(4)
 print(f2.bar) # 4
 print(f1.bar) # 3
+
 ```
+
 2. Un-intuitive behavior when we use mutable structures as default parameters
+
 ```python3
 class Foo:
     def __init__(self, bar_list = []):
@@ -37,5 +42,5 @@ print(f2.bar) # [2, 2, 4] <- Wait what? Should this not be []
 
 So it turns that putting [mutable default parameters in the class constructor is not a good idea](https://stackoverflow.com/questions/4841782/python-constructor-and-default-value)
 
-The reason behind this is the Python interpreter reads through your class definition only once. 
+The reason behind this is the Python interpreter reads through your class definition only once.        
 Which means that the SAME mutable default parameter will be used by reference every time you instantiate a new instance of your class.   
