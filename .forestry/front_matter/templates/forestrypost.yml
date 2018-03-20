@@ -1,0 +1,6 @@
+---
+pages:
+- _posts/accidental-shared-class-variables.md
+hide_body: false
+fields:
+- type: tag_list
