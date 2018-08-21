@@ -1,0 +1,3 @@
+[submodule "ResumeGenerator"]
+	path = ResumeGenerator
+	url = https://github.com/arashout/ResumeGenerator.git
