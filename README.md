@@ -9,3 +9,4 @@ Built with Jekyll, YAML and Bulma (CSS).
     - Headline in resume.yaml
     - Subtitle in html
 - [ ] Start doing some blog posts
+- [ ] Link to raw pdf in github instead of using sub-repo
