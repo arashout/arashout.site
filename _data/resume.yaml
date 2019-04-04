@@ -40,7 +40,7 @@ profiles:
     username: Arash
     url: 'https://github.com/arashout/ResumeGenerator/raw/master/arash_outadi_resume.pdf'
     html: >-
-      <a href='https://github.com/arashout/ResumeGenerator/raw/master/arash_outadi_resume.pdf' title='PDF Resume'>
+      <a href="https://github.com/arashout/ResumeGenerator/raw/master/arash_outadi_resume.pdf" title="PDF Resume">
       <span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i>
       <i class="fa fa-file-pdf-o fa-stack-1x fa-inverse"></i> </span> </a>
 experiences:
