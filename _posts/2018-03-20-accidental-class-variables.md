@@ -12,7 +12,7 @@ It is best demonstrated through some code snippets below:
 
 1. Normal/Expected behavior when we use immutable primitives as default parameters
 
-```python3
+```python
 class Foo:
     def __init__(self, bar = 3):
         self.bar = bar
@@ -27,7 +27,7 @@ print(f1.bar) # 3
 
 2. Un-intuitive behavior when we use mutable structures as default parameters
 
-```python3
+```python
 class Foo:
     def __init__(self, bar_list = []):
         self.bar_list = bar_list
