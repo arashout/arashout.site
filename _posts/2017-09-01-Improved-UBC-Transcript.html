@@ -34,19 +34,39 @@ Beautifies the lacking unofficial UBC transcript with extra information and bett
     </li>
     <li>
         <p>Click on the bookmarklet to run it</p>
-        <p>It might take the server some time to boot up the first time you run it.</p?
+        <p>It might take the server some time to boot up the first time you run it.</p>
     </li>
 </ol>
 
-<!-- TODO: -->
-<!-- <h1>How it works</h1> -->
+<h1>How it works</h1>
+There are two main components that make up the UBC Transcript Beautifier
+<h2>Bookmarklet (Client-Side)</h2>
+There is the client side (On the user's browser) bookmarklet that is responsible for:
+<ul>
+    <li>Scanning the courses table and extracting the course codes</li>
+    <li>Style the courses table to include a course names column and various other improvements</li>
+    <li>Sending the extracted course codes to the "Server"</li>
+    <li>Recieve the associated course names for each course code and fill in the table</li>
+</ul>
+<h2>Server</h2>
+There is a web server that is responsible for:
+<ul>
+    <li>Storing information about UBC courses, primarily which course codes map to which course names</li>
+    <li>Responding to requests (for course names) from the "Client"</li>
+</ul>
+<strong>NOTE: Right now, the "Server" is deployed on AWS Lambda and is technically using the Serverless framework</strong>
 
-<h5>
-    Source Code: 
-    <a href='https://github.com/arashout/ubcapi' title='Improved Transcript Github Source'>
+<h2>Scraping</h2>
+There is a technically a third component to the system, and this is the periodic web scraping of the UBC website, to keep the course information updated on the "Server".
+
+
+<h2>Source Code</h2>
+<span>
+    <p>Github <a href='https://github.com/arashout/ubcapi' title='Improved Transcript Github Source'>
         <span class='fa-stack fa'>
         <i class='fa fa-circle fa-stack-2x'></i>
         <i class='fa fa-github fa-stack-1x fa-inverse'></i>
         </span>
-    </a>
-</h5>
+    </a></p>
+</span>
+

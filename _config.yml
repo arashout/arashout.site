@@ -6,3 +6,10 @@ url: "http://arashout.site/"
 gitub_username: arashout
 # Google Analytics
 google_analytics: UA-109683244-1
+
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
