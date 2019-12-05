@@ -4,14 +4,8 @@
         <p class="card-header-title">{{ include.experience.position }}</p>
         <p class="card-header-title">{{ include.experience.company }}</p>
         <p class="card-header-title">{{ include.experience.startDate | date: "%b, %Y" }} - {{ include.experience.endDate | date: "%b, %Y" }}</p>
-        <span 
-            class="card-dropdown-icon"
-            data-refID="{{ jobID }}"
-            onclick="toggleContent(this)">
-            <i class="fa fa-plus-square-o fa-lg"></i>
-        </span>
     </header>
-    <div id="{{ jobID }}" class="card-content hidden">
+    <div id="{{ jobID }}" class="card-content">
         <ul class="job-highlights with-bullets">
             {% for highlight in include.experience.highlights %}
             <li>{{ highlight }}</li>
