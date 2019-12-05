@@ -10,7 +10,8 @@ tags:
 Using default argument parameters on the `__init__` method on your class will create shared class variables instead of instance variables as you might expect!
 It is best demonstrated through some code snippets below:
 
-1. Normal/Expected behavior when we use immutable primitives as default parameters
+# Expected
+When we use primitives that are "pass by value" as default parameters
 
 ```python
 class Foo:
@@ -24,7 +25,8 @@ print(f2.bar) # 4
 print(f1.bar) # 3
 ```
 
-2. Un-intuitive behavior when we use mutable structures as default parameters
+# Unexpected
+When we use structures that are "passed by reference" as default parameters      
 
 ```python
 class Foo:
@@ -38,8 +40,9 @@ print(f1.bar) # [2, 2, 4]
 f2 = Foo()
 print(f2.bar) # [2, 2, 4] <- Wait what? Should this not be []
 ```
-
+# Conclusion
 So it turns that putting [mutable default parameters in the class constructor is not a good idea](https://stackoverflow.com/questions/4841782/python-constructor-and-default-value)
 
+# Why
 The reason behind this is the Python interpreter reads through your class definition only once.        
 Which means that the SAME mutable default parameter will be used by reference every time you instantiate a new instance of your class.   
