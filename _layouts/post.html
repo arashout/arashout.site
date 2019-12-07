@@ -1,5 +1,5 @@
---- 
-# Jekyll Front Matter 
+---
+# Jekyll Front Matter
 ---
 
 <!DOCTYPE html>
@@ -9,19 +9,24 @@
     <title> {{ page.title }} </title>
     {% include styles_snippet.html %}
 
-    {% if jekyll.environment == 'production' and site.google_analytics %} {% include google_analytics_snippet.html %} {% endif %}
+    {% if jekyll.environment == 'production' and site.google_analytics %} {% include google_analytics_snippet.html %}
+    {% endif %}
 </head>
 
 <body>
-    <div class="container">
-        {% include header.html %}
-        <div class="box">
-            <p class="title" align="center">{{ page.title }}</p>
-            <div class="content">
+    <section>
+        <div class="container">{% include header.html %}</div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <p class="title" class="has-text-centered">{{ page.title }}</p>
+            <div id="content" class="content box">
                 {{ content }}
             </div>
         </div>
-    </div>
+    </section>
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
 </html>

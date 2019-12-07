@@ -4,11 +4,12 @@ title: Improved UBC Transcript
 permalink: posts/improved-ubc-transcript
 tags: ['Write-Up']
 ubcapi: https://v7rr12wbr7.execute-api.us-west-2.amazonaws.com/prod
+toc: true
 ---
 
 <h1>What it does:</h1>
 <p>
-Beautifies the lacking unofficial UBC transcript with extra information and better formatting.
+    Beautifies the lacking unofficial UBC transcript with extra information and better formatting.
 </p>
 <h1>How it does this:</h1>
 <p>It does this in several ways:</p>
@@ -24,12 +25,14 @@ Beautifies the lacking unofficial UBC transcript with extra information and bett
 <ol class="with-bullets">
     <li>
         <p>Go to <a class="colour-link" href="{{ page.ubcapi }}">this page</a> check that the API status is ONLINE and
-        drag the bookmarklet onto your bookmarks bar</p>
+            drag the bookmarklet onto your bookmarks bar</p>
         <p>NOTE: This bookmarklet works best with Google Chrome and hasn't been tested with other browsers!</p>
     </li>
     <li>
         <p>
-        Navigate to the <a class="colour-link" href="https://ssc.adm.ubc.ca/sscportal/servlets/SRVSSCFramework?function=SessGradeRpt">SSC grades page</a>
+            Navigate to the <a class="colour-link"
+                href="https://ssc.adm.ubc.ca/sscportal/servlets/SRVSSCFramework?function=SessGradeRpt">SSC grades
+                page</a>
         </p>
     </li>
     <li>
@@ -54,19 +57,20 @@ There is a web server that is responsible for:
     <li>Storing information about UBC courses, primarily which course codes map to which course names</li>
     <li>Responding to requests (for course names) from the "Client"</li>
 </ul>
-<strong>NOTE: Right now, the "Server" is deployed on AWS Lambda and is technically using the Serverless framework</strong>
+<strong>NOTE: Right now, the "Server" is deployed on AWS Lambda and is technically using the Serverless
+    framework</strong>
 
 <h2>Scraping</h2>
-There is a technically a third component to the system, and this is the periodic web scraping of the UBC website, to keep the course information updated on the "Server".
+There is a technically a third component to the system, and this is the periodic web scraping of the UBC website, to
+keep the course information updated on the "Server".
 
 
 <h2>Source Code</h2>
 <span>
     <p>Github <a href='https://github.com/arashout/ubcapi' title='Improved Transcript Github Source'>
-        <span class='fa-stack fa'>
-        <i class='fa fa-circle fa-stack-2x'></i>
-        <i class='fa fa-github fa-stack-1x fa-inverse'></i>
-        </span>
-    </a></p>
+            <span class='fa-stack fa'>
+                <i class='fa fa-circle fa-stack-2x'></i>
+                <i class='fa fa-github fa-stack-1x fa-inverse'></i>
+            </span>
+        </a></p>
 </span>
-

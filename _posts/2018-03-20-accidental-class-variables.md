@@ -3,10 +3,12 @@ layout: post
 title: Accidental Static Class Variables
 permalink: posts/accidental-static-class-variables
 date: 2018-03-20 00:00:00 +0000
+toc: true
 tags: 
 - Python
 ---
 
+# Problem
 Using default argument parameters on the `__init__` method on your class will create shared class variables instead of instance variables as you might expect!
 It is best demonstrated through some code snippets below:
 
