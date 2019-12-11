@@ -8,9 +8,8 @@ published: false
 
 # Problem
 You changed one function to require a `ctx context.Context` and now you have to change the function signatures of the
-all the upstream functions in your codebase :angry:!
-This problem is described pretty aptly by Michal Štrba in his [blog
-post](https://faiface.github.io/post/context-should-go-away-go2/) about "context being like a virus".
+all the upstream functions in your codebase :angry:!   
+Do you have to make all these changes manually or can you automate the process somehow?
 
 ## Illustration
 We want to change this function
@@ -42,8 +41,7 @@ The algorithm for the manual solution is very simple, so on a high level to auto
 5. Iterate until there are no more places where an "injection" is required
 6. Convert the AST back into the text representation -> Our new Golang source code
 
-## What is an AST?
-<!-- TODO -->
+If you want to learn more about Go's AST, I recommend this [post from Eno Compton](https://commandercoriander.net/blog/2016/12/30/reading-go-ast/)[7]
 
 # Setup
 ## Libraries
@@ -65,10 +63,14 @@ Our primary focus should be on the on the [`FuncDecl`](https://godoc.org/github.
 - Defining a function <-- Might need to add a `ctx context.Context` parameter
 - Calling a function <-- Might need to add an `ctx` argument
 
-## Step 1 - Determine which parts of AST to edit
+## Step 1 - Use "dst" to parse Go code
+Before we start jumping into the logic of the program, let's just see a quick demo of how we parse Go code using the "dave/dst" package and print out the AST representation of the [`FuncDecl`](https://godoc.org/github.com/dave/dst#FuncDecl) nodes.
+<script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=parse_simple.go"></script>
+I've left comments in the above code snippet, so be sure to read those before moving on. 
 
+## Step 2 - Determine which parts of AST to edit
 ### FuncDecl Node
-Let's look at the `FuncDecl` node for the following code.
+Let's look at the `FuncDecl`, node for the following code.
 <script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=new_func.go"></script>
 
 #### Function Signature
@@ -85,7 +87,9 @@ When examining the function body there are two tasks we need to accomplish:
 
 
 ## Step 2 - Utility functions
-## Step 3 - Parse some go code
+
+## Step 3 - Use "dst" to parse Go code
+
 ## Step 4 - Determine what we want to inject
 ## Step 5 - Inject  
 ## Step 6 - 
@@ -111,3 +115,4 @@ In some ways, they are solving a simpler problem because the function signature 
 4. https://github.com/golang/go/issues/20744 "Free-floating comments are single-biggest issue when manipulating the AST"
 5. http://goast.yuroyoro.net/ Golang AST visualizer
 6. https://godoc.org/github.com/dave/dst GoDoc for github.com/dave/dst package
+7.  https://commandercoriander.net/blog/2016/12/30/reading-go-ast/
