@@ -61,7 +61,7 @@ So go to http://goast.yuroyoro.net/ and play around with these [above gists](htt
   
 Our primary focus should be on the on the [`FuncDecl`](https://godoc.org/github.com/dave/dst#FuncDecl) and [`CallExpr`](https://godoc.org/github.com/dave/dst#CallExpr) Nodes since our injection points will be either when we are:
 - Defining a function <-- Might need to add a `ctx context.Context` parameter
-- Calling a function <-- Might need to add an `ctx` argument
+- Calling a function <-- Might need to add a `ctx` argument
 
 ## Step 1 - Use "dst" to parse Go code
 Before we start jumping into the logic of the program, let's just see a quick demo of how we parse Go code using the "dave/dst" package and print out the AST representation of the [`FuncDecl`](https://godoc.org/github.com/dave/dst#FuncDecl) nodes.
@@ -86,12 +86,19 @@ When examining the function body there are two tasks we need to accomplish:
 1. If we are inside a function that does not have 
 
 
-## Step 2 - Utility functions
+## Step 5 - Helper Functions
+Remember that we either need to 
+- Add a `ctx context.Context` parameter to a function declaration (`FuncDecl` Node)
+- Add a `ctx` argument to a function call (`CallExpr`)
+The Go AST structs for these two actions can be defined as follows:
+<script src=https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=helper1.go></script>
 
-## Step 3 - Use "dst" to parse Go code
+## Step 6 - Editting the AST
+To demonstrate how to add arguments and parameters using our helper functions, observe the following "dumb" `applyFunc` (It is dumb because it adds a `ctx` and `context.Context` unconditionally, even when they are not needed!) that adds an additional `ctx` argument and `ctx context.Context` parameter to every function call and function definition respectively.
+<script src=https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=example_apply_func.go></script>
+Let's use our applyFunc and print out the source code! Notice I added another utility function for converting the AST representation into actual Go code.
+<script src=https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=dumb_apply_print.go></script>
 
-## Step 4 - Determine what we want to inject
-## Step 5 - Inject  
 ## Step 6 - 
 ## Step 7 - Iterate
 ## Optional - Add comments describing iteration
@@ -102,7 +109,7 @@ When examining the function body there are two tasks we need to accomplish:
 # Appendix
 
 ## Difficulties compiling `dave/dst`
-
+<!-- TODO -->
 
 ## Related Reading
 - I recommend this article about [Instrumenting Go code via AST](https://developers.mattermost.com/blog/instrumenting-go-code-via-ast/) which served as the basis of this post.  
