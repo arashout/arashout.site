@@ -12,7 +12,7 @@ tags:
 Someone recently contacted me regarding an old Reddit post I had made about finding a software engineering job without a formal computer science degree
 They saw that I was working in software now and basically asked if I had advice for them to do the same.
 
-# Who I Am
+# Who Am I?
 TODO:
 
 **So here is my advice about breaking into a CS (computer science) career without a CS degree.**
