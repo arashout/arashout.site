@@ -3,7 +3,7 @@ layout: post
 title: Adding Context with Go Ast (Code Generation/Instrumentation)
 permalink: posts/add-context-with-go-ast
 tags: ['go', 'code-generation', 'parsing', 'ast', 'instrumentation']
-# published: false
+published: false
 ---
 
 # Problem
