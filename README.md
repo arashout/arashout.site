@@ -10,3 +10,4 @@ Built with Jekyll, YAML and Bulma (CSS).
     - Subtitle in html
 - [ ] Start doing some blog posts
 - [ ] Link to raw pdf in github instead of using sub-repo
+- [ ] Split up blog, resume, and projects
