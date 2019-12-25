@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Adding Context with Go Ast (Code Generation/Instrumentation)
+title: Adding Contexts via Go AST (Code Instrumentation) 
 permalink: posts/add-context-with-go-ast
+playground_img: https://www.pikpng.com/pngl/m/455-4550459_golang-logo-go-logo-png-transparent-png.png
 tags: ['go', 'code-generation', 'parsing', 'ast', 'instrumentation']
-published: false
 ---
 
 # Problem
@@ -11,20 +11,26 @@ You changed one function to require a `ctx context.Context` and now you have to 
 all the upstream functions in your codebase :angry:!   
 Do you have to make all these changes manually or can you automate the process somehow?
 
+<details>
+    <summary>Spoilers</summary>
+    We can automate it using Go's AST.  <br/>  
+    Check out this playground link to see how to source code can be programmatically changed to include the proper 
+    arguments/parameters: <br/>
+    <a href="https://play.golang.org/p/b8J5BykQjK-"><img src="{{ page.playground_img }}" height="24" width="42"/> Playground Link</a>
+</details>
+
 ## Illustration
-We want to change this function
-<script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=original_func.go"></script>
+We want to change this function to what is commented out in the `TODO:`
 
-To this
-<script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=new_func.go"></script>
+<script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=before_after_func.go"></script>
 
-<iframe src="/assets/output.html" class="is-fullwidth">
-</iframe>
-Inside of the file below, where other functions call the function you just changed
+And imagine the function sits inside the fictitious file below, with many other functions calling it.  
+Again the `TODO:`s indicate what needs to change to make this file compile.   
+NOTE: The other functions are not important, only there to illustrate we have to change all the functions that call our changed function
+
+**Fictitious File** Notice all the TODOs
 <script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=example.go"></script>
 
-We want all the ancestor functions of `changedFn` to have a `ctx context.Context` parameter, because they are directly or indirectly calling `changedFn` which now requires a `context.Context`
-<script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=expected_code.go"></script>
 
 ## Manual Solution
 Fixing this manually, usually involves a trial and error solution process:
@@ -32,9 +38,9 @@ Fixing this manually, usually involves a trial and error solution process:
 2. Adjust the function definition/signature to include a `ctx context.Context` parameter
 3. Iterate until the compiler no longer complains
 
-## Programmatic Solution
+## <a name="pseudo-code"> Programmatic Solution (Pseudo-Code)
 The algorithm for the manual solution is very simple, so on a high level to automate this process we can:
-1. Parse the go code 
+1. Parse the Go code 
 2. Generate an [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree)(Abstract Syntax Tree) [3]
 3. Programmatically determine where we need "inject" code, specifically:
     - `ctx` argument to a function call
@@ -43,29 +49,37 @@ The algorithm for the manual solution is very simple, so on a high level to auto
 5. Iterate until there are no more places where an "injection" is required
 6. Convert the AST back into the text representation -> Our new Golang source code
 
-If you want to learn more about Go's AST, I recommend this [post from Eno Compton](https://commandercoriander.net/blog/2016/12/30/reading-go-ast/)[7]
+# Pre-Requisites
+In this tutorial I assume that:
+- You are proficient with Go
+- Somewhat familiar with what an AST is
+  - If you want to learn more about Go's AST, I recommend this [post from Eno Compton](https://commandercoriander.net/blog/2016/12/30/reading-go-ast/)[7]
+
+# Tutorial Conventions
+## Playground Links
+After a code example, I will provide a full working example via the Go Playground see you can run the code for yourself.
+Look out for <span><img src="{{ page.playground_img }}" height="24" width="42"/> Playground Link</span>
+## Brevity
+I will often only include the minimal amount of code to demonstrate a new concept in the code examples and will generally cut out any boiler-plate code.
+Look for the Playground links for full working examples.
 
 # Setup
 ## Libraries
 Note in this tutorial we will be using these libraries:
 - github.com/dave/dst (Alternative to `go/ast`)
-- github.com/sergi/go-diff/diffmatchpatch (Pretty text diffs) 
-- github.com/davecgh/go-spew (Debug print go structures)
 
 You can download them with the `go get` command:
-```
+<pre>
 go get github.com/dave/dst
-go get github.com/sergi/go-diff/diffmatchpatch
-go get github.com/davecgh/go-spew
-```
+</pre>    
 
-The latter two are just for illustrative and debugging purposes but `github.com/dave/dst` is a fork of the official `go/ast` package that is meant specifically for **instrumenting** go code, in contrast `go/ast` was primarily meant for code generation. This is an important difference because in code instrumentation, we only want to change a very specific region of code and leave the rest of the AST exactly as it was. `go/ast` has a difficulties [achieving this, especially with comments](https://github.com/golang/go/issues/20744) [4]
-
-NOTE: I had some difficulty compiling `github.com/dave/dst`, if you had as well then refer to the Appendix
+`github.com/dave/dst` is a fork of the official `go/ast` package that is meant specifically for **instrumenting** go code.  
+In contrast `go/ast` was primarily meant for code generation.   
+This is an important difference because in code instrumentation, we only want to change a very specific region of code and leave the rest of the AST exactly as it was. `go/ast` has a difficulties [achieving this, especially with comments](https://github.com/golang/go/issues/20744) [4]   
 
 # Code
 ## Step 0 - Visualize the AST
-Using this useful [go-ast visualizer](http://goast.yuroyoro.net/), we can get an idea of what the Go AST looks like and what we need to look for when injecting new code [5].
+Using this [go-ast visualizer](http://goast.yuroyoro.net/), we can get an idea of what the Go AST looks like and what we need to look for when injecting new code [5].  
 So go to http://goast.yuroyoro.net/ and play around with these [above gists](https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js)  
   
 Our primary focus should be on the on the [`FuncDecl`](https://godoc.org/github.com/dave/dst#FuncDecl) and [`CallExpr`](https://godoc.org/github.com/dave/dst#CallExpr) Nodes since our injection points will be either when we are:
@@ -75,35 +89,43 @@ Our primary focus should be on the on the [`FuncDecl`](https://godoc.org/github.
 ## Step 1 - Use "dst" to parse Go code
 Before we start jumping into the logic of the program, let's just see a quick demo of how we parse Go code using the "dave/dst" package and print out the AST representation of the [`FuncDecl`](https://godoc.org/github.com/dave/dst#FuncDecl) nodes.
 <script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=parse_simple.go"></script>
-Here's a [playground link, run it to see what it does!](https://play.golang.org/p/Q_SeZSnir1n)
+
+<a href="https://play.golang.org/p/w740yqGMDUY"><img src="{{ page.playground_img }}" height="24" width="42"/> Playground Link</a>
 
 I've left comments in the above code snippet, so be sure to read those before moving on. 
 
 ## Step 2 - Helper Functions
 Remember that we either need to 
 - Add a `ctx context.Context` parameter to a function declaration (`FuncDecl` Node)
-- Add a `ctx` argument to a function call (`CallExpr`)
+- Add a `ctx` argument to a function call (`CallExpr`)   
 The Go AST structs for these two actions can be defined as follows:
 <script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=helper1.go"></script>
 
 ## Step 3 - Editing the AST
-To demonstrate how to add arguments and parameters using our helper functions, observe the following "dumb" `applyFunc` (It is dumb because it adds a `ctx` and `context.Context` unconditionally, even when they are not needed!) that adds an additional `ctx` argument and `ctx context.Context` parameter to every function call and function definition respectively.
+To demonstrate how to add arguments and parameters using our helper functions, observe the following "naive" `applyFunc` that adds an additional `ctx` argument and `ctx context.Context` parameter to every function call and function definition respectively.   
 <script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=example_apply_func.go"></script>
 Let's use our applyFunc and print out the source code! Notice I added another utility function for converting the AST representation into actual Go code.
 <script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=dumb_apply_print.go"></script>
 
-Assuming that you have the `example.go` file, described at the start of the post and a directory structure like this:
-```
-├── main.go
-├── test
-    └── example.go
-```
-Try running it locally.  
+<a href="https://play.golang.org/p/x6WiOgwNpTm"><img src="{{ page.playground_img }}" height="24" width="42"/> Playground Link</a>
 
-TODO: Upload a playground link 
-Otherwise here's a [playground link, run it to see what it does!](https://play.golang.org/p/Q_SeZSnir1n)   
-(NOTE: Instead of reading a file, I simply pass a string into `dst.Parse`, which simplifies the code a little bit)
+Notice that this `applyFunc` doesn't check if it is actually necessary to inject additional code. It just does it.   
+To see why this `applyFunc` is not adequate try running changing the `srcCodeString` to:
+```go
+package test
 
+import (
+	"fmt"
+	"context"
+)
+
+func alreadyHasContext(ctx context.Context) {
+	fmt.Println("Do some important work...")
+	makeDownstreamRequest(ctx, "Some important data!") 
+}
+```
+Or if you are lazy go to playground link below.   
+<a href="https://play.golang.org/p/6txVwqu164P"><img src="{{ page.playground_img }}" height="24" width="42"/> Playground Link</a>
 
 ## Step 4 - Being Selective
 Instead of indiscriminately adding `ctx` everywhere like in the naive implementation, this time we will examine the nodes in the AST to determine where we need to inject a `ctx` argument or `ctx content.Context` function parameter.
@@ -132,37 +154,88 @@ Below are two possible ways of determining that:
 
 In this tutorial, we'll go over method 2 as it slightly simpler and doesn't require an initial scan.
 
-## Step 5 - Selective ApplyFunc
-To make the our `ApplyFunc` function more selective we will have to examine the `FuncDecl` and `CallExpr` nodes
-<details>
-  <summary>Selective Apply Function</summary>
-  <script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=selective_apply_func.go"></script>
-</details>
-    
-We also need to define some more helpful functions 
+**Functions To Examine The `FuncDecl` & `CallExpr`**
 <script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=selective_helpers.go"></script>
 Note: the global map `needsContextsFuncs` (However, we use the `map` as a Set)
 
+## Step 5 - Selective ApplyFunc
+To make the our `ApplyFunc` function more selective we will have to examine the `FuncDecl` and `CallExpr` nodes
+
+**Selective Apply Function**
+<script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=selective_apply_func.go"></script>
+
 ## Step 6 - Is this it?
 So now we have a Selective `ApplyFunc` will it be able to add all the `Context`s now?    
-Run this [playground link to find out]()
+<a href="https://play.golang.org/p/pQqwOwBjaU2"><img src="{{ page.playground_img }}" height="24" width="42"/> Playground Link</a>
+
 <details>
     <summary>Spoilers</summary>
     It doesn't
 </details>
 
-## Step 7 - Iterate
-Our new ApplyFunc only manages to change the initial ancestor itself, if want the changes to propagate up we need an iterative solution.
-The basic idea is that we'll keep running `Apply` with our `ApplyFunc` until the generated source code stops changing
+## Step 7 - Iterative Solution
+Our new ApplyFunc only manages to change the immediate ancestors, but if want the changes to propagate up further we need an iterative solution.
+Remember [Step 5 of our pseudo code algorithm](#pseudo-code)
 
+### Infinite For Loop?
+To make sure that all the ancestors are updated we could simply run the `Apply` with our `ApplyFunc` over and over again inside a `for {}` loop, but when should we stop?
+A simple idea that will work is to stop when the previous code is the same as the current code generated.   
+That is when the `ApplyFunc` deems that there are no new areas to add `ctx` arguments or `ctx context.Context` parameters.
 
-## Optional - Add comments describing iteration
-[Playground Link](https://play.golang.org/p/KZMCDcvdiYs)
+### Code 
+<script src="https://gist.github.com/arashout/3f3bad0bf3d70dc70a8e4b6fec568313.js?file=iteration.go"></script>
+<a href="https://play.golang.org/p/p9hRs_Sz63c"><img src="{{ page.playground_img }}" height="24" width="42"/> Playground Link</a>
 
-# Appendix
+### Optional - Add comments describing iteration
+Lastly, as a illustrative exercise, below is a playground link for adding comments that describe in which iteration the `ctx`/`ctx context.Context` was added  
+<a href="https://play.golang.org/p/ukgiuMJIhSC"><img src="{{ page.playground_img }}" height="24" width="42"/> Playground Link</a>
 
-## Difficulties compiling `dave/dst`
-<!-- TODO -->
+Output:
+```go
+package test
+
+import (
+	"context"
+	"fmt"
+)
+
+// Added on 'ctx context.Context' parameter on iteration 0
+func changedFn(ctx context.Context) {
+	fmt.Println("Do some important work...")
+	// Now also make a downstream call
+	makeDownstreamRequest(ctx, "Some important data!")
+}
+
+// Added on 'ctx context.Context' parameter on iteration 1
+func needsctx1(ctx context.Context, n int) {
+	if true {
+		changedFn(ctx) // Added on ctx arg on iteration 0
+	}
+}
+
+// Added on 'ctx context.Context' parameter on iteration 2
+func needsctx2(ctx context.Context) bool {
+	for index := 0; index < 3; index++ {
+		needsctx1(ctx, 1) // Added on ctx arg on iteration 1
+	}
+	return true
+}
+
+// Added on 'ctx context.Context' parameter on iteration 1
+func needsctx3(ctx context.Context) {
+	if needsctx2(ctx) { // Added on ctx arg on iteration 2
+
+		changedFn(ctx) // Added on ctx arg on iteration 0
+	}
+}
+
+type SS struct{}
+
+// Added on 'ctx context.Context' parameter on iteration 2
+func (rec *SS) save(ctx context.Context, s string, n int) {
+	needsctx1(ctx, 2) // Added on ctx arg on iteration 1
+}
+```
 
 ## Related Reading
 - I recommend this article about [Instrumenting Go code via AST](https://developers.mattermost.com/blog/instrumenting-go-code-via-ast/) which served as the basis of this post.  
@@ -176,13 +249,3 @@ In some ways, they are solving a simpler problem because the function signature 
 5. http://goast.yuroyoro.net/ Golang AST visualizer
 6. https://godoc.org/github.com/dave/dst GoDoc for github.com/dave/dst package
 7.  https://commandercoriander.net/blog/2016/12/30/reading-go-ast/
-
-# TODO
-- [ ] Update all playground links
-- [ ] Add Gopher image to playground links
-- [ ] Add appendix entry for compiling `dave/dst`
-- [ ] Have a demo at the top
-- [ ] Split up code blocks
-- [ ] Move changedFunction to top of code snippets
-- [ ] Make everything collapsible!
-- [ ] Have interesting hook at the start
