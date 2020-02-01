@@ -3,7 +3,7 @@ layout: post
 title: Working Through Crafting Interpreters - Scanning - Part 1
 permalink: posts/crafting-interpreters-part-1
 tags: ['rust', 'languages', 'interpreter']
-published: false
+published: true
 ---
 
 # Intro
@@ -86,8 +86,10 @@ It's so easy to have the unit tests in the same file as the functions it's testi
 
 ## Challenges
 
-1. 
-2. 
+// TODO: Complete Q1,2
+1. `The lexical grammars of Python and Haskell are not regular. What does that mean, and why aren’t they?`
+According to the [Wikipedia entry](https://en.wikipedia.org/wiki/Regular_language) `regular` language's they "can be defined as a language recognized by a finite automaton". 
+2. `Aside from separating tokens—distinguishing print foo from printfoo—spaces aren’t used for much in most languages. However, in a couple of dark corners, a space does affect how code is parsed in CoffeeScript, Ruby, and the C preprocessor. Where and what effect does it have in each of those languages?`
 3. `Our scanner here, like most, discards comments and whitespace since those aren’t needed by the parser. Why might you want to write a scanner that does not discard those? What would it be useful for?`
 One case that I wrote a [small tutorial](https://dev.to/arashout/adding-contexts-via-go-ast-code-instrumentation-2ko7) around is code injection/instrumentation. For example, when you want to programmatically insert code into an existing source file you don't want to disrupt the comments and formatting.     
 Another similar more common case is code formatters/linters that automatically fix your code. Again your source code is being editted without changing the behavior or functionality, however comments and white-space are significant because they are intentionally left by the programmer 
