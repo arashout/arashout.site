@@ -3,7 +3,7 @@ layout: post
 title: PL/pgSQL - Converting Reverse IP Pointer Records
 permalink: posts/plpgsql-reverse-ip
 tags: ['sql', 'postgres', 'procedural']
-published: false
+published: true
 ---
 
 # pl/pgSQL (Procedural SQL!)
@@ -68,21 +68,161 @@ Most of the function declaration is fairly standard SQL, however there are a cou
 - Using `LANGUAGE PLPGSQL` declares that we will be using the PL/PGSQL syntax
 - The `IMMUTABLE` keyword tells Postgres engine that our function is a "pure" function that has no side-effects (Doesn't touch the database) and produces the same output given the same input everytime. This allows the optimizer to pre-evaluate/cache results it has already calculated.      
 ### Variable Declaration
+When using PL/PGSQL we need to declare the variables we are going to use, like so:
 ```sql
 CREATE OR REPLACE FUNCTION rev_to_forward_ipv4(ipv4 TEXT) RETURNS INET AS $$ 
--- NEW CODE
+-- NEW CODE 
+DECLARE
+	octets TEXT[4]; -- Array we will store regex captures in
+	octet TEXT; -- Temporary loop variable
+	inet_string CITEXT := ''; -- String that we will build as we loop over octets
+	num_octets INTEGER := 0; -- Count of octets used for calculating CIDR
+	n INTEGER; -- Variable to convert "octet" into a INTEGER to confirm it is between 0-255
+-- ...
+$$ LANGUAGE PLPGSQL IMMUTABLE;
+```
+### Getting Octets With Regular Expressions
+```sql
+CREATE OR REPLACE FUNCTION rev_to_forward_ipv4(ipv4 TEXT) RETURNS INET AS $$ 
+-- ...
+-- NEW CODE 
+BEGIN
+	-- Regex for matching reversed ip address starting with octet and ending in ".in-addr.arpa."
+	-- All the \d+  are inside capture groups
+	-- ^(\d+)\.       There should be at-least one octet at the start of the string
+	-- (?:(\d+)\.)?   We use non-capturing groups for next 3 octets with "?" because they might not be present
+	-- (?:(\d+)\.)?
+	-- (?:(\d+)\.)?
+	-- in-addr\.arpa\.
+	-- e.g. '10.20.in-addr.arpa.' will produce array of {'10', '20', NULL, NULL}
+	SELECT regexp_matches(ipv4, '^(\d+)\.(?:(\d+)\.)?(?:(\d+)\.)?(?:(\d+)\.)?in-addr\.arpa\.$') INTO octets;
+    -- If we don't capture any octets then this isn't a reversed IPv4 PTR record and we can just return NULL
+	IF octets IS NULL THEN 
+		RETURN NULL;
+	END IF;
+    -- Validated rev ipv4 is something like:
+	-- 'x.x.x.x.in-addr.arpa.' cidr = 32
+	-- 'x.x.x.in-addr.arpa.'   cidr = 24
+	-- 'x.x.in-addr.arpa.'     cidr = 16
+	-- 'x.in-addr.arpa.'       cidr = 8
+	-- 'x' represents numbers from 0-255 inclusive (Actual number validation is done in the statements below)
+-- ...
+$$ LANGUAGE PLPGSQL IMMUTABLE;
+```
+The key line here is:
+`SELECT regexp_matches(ipv4, '^(\d+)\.(?:(\d+)\.)?(?:(\d+)\.)?(?:(\d+)\.)?in-addr\.arpa\.$') INTO octets;`
+Here we are injecting the result of the `SELECT` statement into our array! In this case we are using it to capture the rows produced by the `regexp_matches` function given our inputs, but it could also be used to capture the results from normal `SELECT ... FROM ...` type of statements.      
+### Looping Over The Octets
+```sql
+CREATE OR REPLACE FUNCTION rev_to_forward_ipv4(ipv4 TEXT) RETURNS INET AS $$ 
+-- ...
+-- NEW CODE 
+	FOREACH octet IN ARRAY octets LOOP
+        -- EXIT the loop when the octet is NULL
+		EXIT WHEN octet IS NULL;
+
+        -- If's it's not NULL we increase the number of octets
+        -- Also we make sure our octets are within a valid range
+		BEGIN
+			num_octets := num_octets + 1;
+			n = octet :: INTEGER;
+
+            -- Ensure number is within valid range
+            IF n > 255 THEN
+                RETURN NULL;
+            END IF;
+		EXCEPTION 
+			WHEN OTHERS THEN
+				RETURN NULL;
+		END;
+		
+		-- When appending, we add the old string last to reverse the order of octets
+		inet_string :=  octet || '.' || inet_string;
+  	END LOOP;
+-- ...
+$$ LANGUAGE PLPGSQL IMMUTABLE;
+```
+### Add CIDR
+```sql
+	-- Trim the leading dot we added in for loop and append CIDR
+	inet_string := TRIM(BOTH '.' FROM INET_STRING) || '/' || num_octets * 8;
+```
+### CAST into INET
+Finally with our fully constructed `inet_string` we can `CAST` into the Postgres `INET` type using the `::` operator.
+
+```sql
+	BEGIN
+		RETURN inet_string::INET;
+	EXCEPTION 
+		WHEN OTHERS THEN
+			RETURN NULL;
+	END;
+```
+
+## Full Source
+```sql
+
+CREATE OR REPLACE FUNCTION rev_to_forward_ipv4(ipv4 TEXT) RETURNS INET AS $$ 
 DECLARE
 	octets TEXT[4];
 	octet TEXT;
 	inet_string CITEXT := '';
 	num_octets INTEGER := 0;
 	n INTEGER;
--- ...
+BEGIN
+	-- Regex for matching reversed ip address starting with octet and ending in ".in-addr.arpa."
+	-- All the \d+  are inside capture groups
+	-- ^(\d+)\.       There should be at-least one octet at the start of the string
+	-- (?:(\d+)\.)?   We use non-capturing groups for next 3 octets with "?" because they might not be present
+	-- (?:(\d+)\.)?
+	-- (?:(\d+)\.)?
+	-- in-addr\.arpa\.
+	-- e.g. '10.20.in-addr.arpa.' will produce array of {'10', '20', NULL, NULL}
+	SELECT regexp_matches(ipv4, '^(\d+)\.(?:(\d+)\.)?(?:(\d+)\.)?(?:(\d+)\.)?in-addr\.arpa\.$') INTO octets;
+	IF octets IS NULL THEN 
+		RETURN NULL;
+	END IF;
+	-- Validated ipv4 is something like:
+	-- 'x.x.x.x.in-addr.arpa.' cidr = 32
+	-- 'x.x.x.in-addr.arpa.'   cidr = 24
+	-- 'x.x.in-addr.arpa.'     cidr = 16
+	-- 'x.in-addr.arpa.'       cidr = 8
+	-- 'x' represents numbers from 0-255 inclusive (Actual number validation is done in the statements below)
+	
+	FOREACH octet IN ARRAY octets LOOP
+		EXIT WHEN octet IS NULL;
+		
+		BEGIN
+			num_octets := num_octets + 1;
+			n = octet :: INTEGER;
+
+            -- Ensure number is within valid range
+            IF n > 255 THEN
+                RETURN NULL;
+            END IF;
+		
+		EXCEPTION 
+			WHEN OTHERS THEN
+				RETURN NULL;
+		END;
+		
+		-- When appending, we add the old string last to reverse the order of octets
+		inet_string :=  octet || '.' || inet_string;
+  	END LOOP;
+
+	-- Trim the leading dot we added in for loop and append CIDR
+	inet_string := TRIM(BOTH '.' FROM INET_STRING) || '/' || num_octets * 8;
+	
+	BEGIN
+		RETURN inet_string::INET;
+	EXCEPTION 
+		WHEN OTHERS THEN
+			RETURN NULL;
+	END;
+END;
+
 $$ LANGUAGE PLPGSQL IMMUTABLE;
 ```
-When using PL/PGSQL we need to declare
-## Full Source
-
 # Appendix
 ## SQL Setup
 ```sql
