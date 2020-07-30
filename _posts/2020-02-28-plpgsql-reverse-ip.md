@@ -1,8 +1,8 @@
 ---
 layout: post
-title: PL/pgSQL - Converting Reverse IP Pointer Records
+title: Tutorial - PL/pgSQL - Converting Reverse IP Pointer Records
 permalink: posts/plpgsql-reverse-ip
-tags: ['sql', 'postgres', 'procedural']
+tags: ['sql', 'postgres', 'procedural', 'tutorial']
 published: true
 ---
 

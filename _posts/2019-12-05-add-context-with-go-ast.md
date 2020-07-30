@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Adding Contexts via Go AST (Code Instrumentation) 
+title: Tutorial - Adding Contexts via Go AST (Code Instrumentation) 
 permalink: posts/add-context-with-go-ast
 playground_img: https://www.pikpng.com/pngl/m/455-4550459_golang-logo-go-logo-png-transparent-png.png
-tags: ['go', 'code-generation', 'parsing', 'ast', 'instrumentation']
+tags: ['go', 'code-generation', 'parsing', 'ast', 'instrumentation', 'tutorial']
 ---
 
 # Problem
