@@ -2,9 +2,9 @@
 layout: post
 title: Tutorial - Parsing Go structs with LALRPOP (Rust Parsing Library)
 permalink: posts/parsing-go-struct-with-rust
-tags: ['lalrpop', 'rust', 'parser', 'tutorial']
-published: false
+tags: ['lalrpop', 'rust', 'parser', 'tutorial', 'incomplete']
 ---
+# INCOMPLETE
 
 # Introduction
 ## High Level Goal

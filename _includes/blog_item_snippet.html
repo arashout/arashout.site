@@ -5,7 +5,12 @@
         </a>
         <div class="tags">
             {% for tag in include.post.tags %}
+            {% if tag == 'incomplete' %}
+            <span class="tag is-warning">{{ tag }}</span>
+            {% else %}
             <span class="tag">{{ tag }}</span>
+            {% endif %}
+
             {% endfor %}
         </div>
     </div>
