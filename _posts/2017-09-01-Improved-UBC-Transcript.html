@@ -3,7 +3,7 @@ layout: post
 title: Improved UBC Transcript
 permalink: posts/improved-ubc-transcript
 tags: ['Write-Up']
-ubcapi: https://v7rr12wbr7.execute-api.us-west-2.amazonaws.com/prod
+ubcapi: https://ubc-courses-frontend.s3-us-west-2.amazonaws.com/index.html
 toc: true
 ---
 
@@ -52,13 +52,11 @@ There is the client side (On the user's browser) bookmarklet that is responsible
     <li>Recieve the associated course names for each course code and fill in the table</li>
 </ul>
 <h2>Server</h2>
-There is a web server that is responsible for:
+This is a AWS Lambda function (Flask + Serverless) that
 <ul>
-    <li>Storing information about UBC courses, primarily which course codes map to which course names</li>
+    <li>Stores information about UBC courses, primarily which course codes map to which course names</li>
     <li>Responding to requests (for course names) from the "Client"</li>
 </ul>
-<strong>NOTE: Right now, the "Server" is deployed on AWS Lambda and is technically using the Serverless
-    framework</strong>
 
 <h2>Scraping</h2>
 There is a technically a third component to the system, and this is the periodic web scraping of the UBC website, to
