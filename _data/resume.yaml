@@ -47,16 +47,43 @@ profiles:
       fa-stack-2x"></i> <i class="fa fa-file-pdf-o fa-stack-1x fa-inverse"></i>
       </span> </a>
 experiences:
+  - company: KeepTruckin
+    position: Software Engineer
+    startDate: 2020-10-15T00:00:00.000Z
+    endDate: null
+    summary: >-
+      Building and maintaining Go services powering Bloxone DDI services.
+    highlights:
+      - Built a Custom CRD Controller for declaratively deploy AWS Lambda Functions
+    technologies:
+      - Golang
+      - Ruby/Rails
+      - Kubernetes
+      - AWS
+      - Bazel
+      - Nix
+  - company: Ravelin
+    position: Software Engineer
+    startDate: 2017-09-12T00:00:00.000Z
+    endDate: 2018-08-17T00:00:00.000Z
   - company: Infoblox
     position: Software Engineer
     startDate: 2019-07-15T00:00:00.000Z
+    endDate: 2020-10-15T00:00:00.000Z
     summary: >-
-      Server-side application developer building DDI services
+      Building and maintaining Go services powering Bloxone DDI services.
+    highlights:
+      - >- 
+        Reduced developer time spent by 75% by replacing custom health checking application with several manual steps with Prometheus using Kubernetes service discovery.
+      - >-
+        Outlined and implemented best logging/tracing practices for the team leading to improved bug resolution times.
+      - >- 
+        Lead initiative to implement distributed tracing significantly improving observability when dealing with complex multi-service bugs
     technologies:
       - Golang
       - Docker
       - Kubernetes
-      - Protobuf
+      - AWS
   - company: Ravelin
     position: Software Engineer
     startDate: 2017-09-12T00:00:00.000Z
@@ -87,30 +114,36 @@ experiences:
       - React
       - Cypress
       - AWS
-  - company: Andritz Ltd
-    position: Engineering Co-op Student
-    startDate: 2016-05-22T00:00:00.000Z
-    endDate: 2016-12-20T00:00:00.000Z
-    highlights:
-      - Created a suite of Excel tools saving PMs 10 hours every week
-      - >-
-        Significantly reduced time spent searching for SAP materials with small
-        database app
-    technologies:
-      - Python
-      - SQLite
-      - VBA
-      - SAP
-      - Excel
 education:
+  - institution: Georgia Institute of Technology
+    location:
+      city: Atlanta
+      regionCode: GA
+    studyType: Master of Science
+    area: Computer Science
+    startDate: 2020-09-07T00:00:00.000Z
+    endDate: 2023-05-01T00:00:00.000Z
   - institution: University of British Columbia
     location:
       city: Vancouver
       regionCode: BC
     studyType: Bachelor of Applied Science
+    area: Mechanical Engineering
     startDate: 2013-09-07T00:00:00.000Z
     endDate: 2019-05-01T00:00:00.000Z
     gpa: 3.6/4.3
+contributions:
+  - name: NuShell
+    role: Contributor
+    source: 'https://github.com/nushell/nushell/pulls?q=+is%3Apr+author%3Aarashout+'
+    summary: >-
+      Cross-platform shell that understands the structure of your data!
+    highlights:
+      - Implemented streaming functionality when opening files with proper encoding support. 
+        Making it possible to stream very large files.
+      - Added additional math functions while refactoring math command and improving test coverage.
+    technologies:
+      - Rust
 projects:
   - name: JobBot
     source: 'https://github.com/arashout/JobBot'
@@ -137,6 +170,7 @@ projects:
       - MongoDB
       - AWS Lambda
   - name: Alphabet Match
+    noDisplay: true
     demo: 'https://arashout.github.io/alphabet-match/'
     image: 'https://raw.githubusercontent.com/arashout/alphabet-match/master/demo.gif'
     source: 'https://github.com/arashout/alphabet-match'
@@ -147,6 +181,7 @@ projects:
     - React
     - TypeScript
   - name: Sudoku Solver
+    noDisplay: true
     demo: 'https://sudoku-solve.azurewebsites.net'
     source: 'https://github.com/arashout/SudokuSolveCP'
     summary: >-
