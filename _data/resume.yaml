@@ -62,10 +62,6 @@ experiences:
       - AWS
       - Bazel
       - Nix
-  - company: Ravelin
-    position: Software Engineer
-    startDate: 2017-09-12T00:00:00.000Z
-    endDate: 2018-08-17T00:00:00.000Z
   - company: Infoblox
     position: Software Engineer
     startDate: 2019-07-15T00:00:00.000Z
