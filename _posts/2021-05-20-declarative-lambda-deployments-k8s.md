@@ -24,6 +24,7 @@ So before I dive into the overview and implementation of the topic of this post,
         - Sharing infrastructure is also a WIN because it enables the teams to share tooling.
 3. Rolling back changes is difficult and time-consuming error-prone
     - Again, this is the case because we were naively uploading zip files straight to our Function
+
 ## Solution - Use K8s to Declaratively Deploy AWS Functions
 ### Target State
 Let me quickly illustrate the flow in words:
@@ -148,6 +149,7 @@ If you use one of the frameworks most of the required boilerplate will be genera
 - [The Custom Resource Definition (What is the LambdaDeployment resources supposed to look like)]()
 - [The Controller Role Bindings (The controller is allowed to use the Kubernetes API to watch CRDs)]()
 - [The Controller Deployment (The actual program with watch logic and calling the AWS API)]()
+
 ## Alternatives
 ### ❌  AWS Lambda Versioning and Aliases?
 The first solution that pops to mind is to using the AWS builtin functionality, [Versioning](https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html) and [Aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#versioning-aliases-api).    
@@ -167,6 +169,7 @@ Pragmatically, this seemed like a bigger change to our workflow than what were c
 ### ❌  Terraform?
 TODO:
 - No because having to do git changes is prohibitively slow
+
 ### ❌  Serverless
 TODO:
 - No because of our build system
