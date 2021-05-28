@@ -99,8 +99,8 @@ type LambdaDeploymentSpec struct {
 ```
 
 ##### Controller Reconcile Loop
-The `Reconcile` handler is the function that tries to "move the current state of the cluster to the desired state" in the spec.     
-A simple example of what the controller `Reconcile` handler could look like is shown below.
+The `Reconcile` handler is the function that tries to "move the current state of the cluster to the desired state" in the spec.   
+Here is a simplified version of the `Reconcile` handler for the LambdaDeployment Controller:     
 ```go
 func (r *LambdaDeploymentReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	ld := &LambdaDeployment{}
@@ -132,7 +132,7 @@ func (r *LambdaDeploymentReconciler) Reconcile(ctx context.Context, req ctrl.Req
 	return ctrl.Result{}, nil
 }
 ```
-
+#### Deploying the Controller 
 There are a couple of steps involved in deploying a custom controller in Kubernetes.   
 If you use one of the frameworks most of the required boilerplate will be generated for you, but namely it involves applying the following manifests:
 - [The Custom Resource Definition (What is the LambdaDeployment resources supposed to look like)]()
