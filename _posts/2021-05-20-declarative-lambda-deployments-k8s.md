@@ -82,8 +82,8 @@ At KT we went with the Operator Framework, you can see an toy example of the sou
 
 I'm not going to go over all the code in the controller, as much of is generated boilerplate.     
 But I will highlight a couple important portions.    
-##### LambdaDeployment Struct
-This is the `struct` used to generate the CRD.
+##### LambdaDeployment Struct (CRD Generation)
+Below is the `struct` definition which will be used to generate the CRD using [`controller-gen`]().    
 ```go
 // LambdaDeploymentSpec defines the desired state of LambdaDeployment
 type LambdaDeploymentSpec struct {
@@ -95,6 +95,16 @@ type LambdaDeploymentSpec struct {
 	// Note that the controller expects the zip file to be in the following locations
 	// s3://lambda-zip/FUNCTION_NAME>/<COMMIT>.zip
 	Commit string `json:"commit"`
+}
+
+// LambdaDeployment is the Schema for the lambdadeployments API
+type LambdaDeployment struct {
+    // metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	metav1.TypeMeta   `json:",inline"`
+	metav1.ObjectMeta `json:"metadata,omitempty"`
+
+	Spec   LambdaDeploymentSpec   `json:"spec,omitempty"`
+	Status LambdaDeploymentStatus `json:"status,omitempty"`
 }
 ```
 
