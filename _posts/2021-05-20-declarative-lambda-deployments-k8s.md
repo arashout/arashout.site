@@ -177,10 +177,13 @@ TODO:
 # Caveats
 ## Additional Complexity at KT
 At KT the implementation is a bit more complicated because we have to integrate [Bazel]() and [ArgoCD]() into the loop.   
+TODO: Describe in words what happens
+
 The diagram looks more like this at KT: 
 ![Diagram of Architecture](/img/kt_lambda_deployment.png)   
 
-## Community Driven Project: ACK
+
+# Community Driven Project: ACK
 The AWS community is already in the midst of building Kubernetes controllers for various AWS resources (S3, SNS, SQS, ECR, DynamoDB, API Gateway) but they haven't gotten to [AWS Lambda Functions](https://github.com/aws-controllers-k8s/community/issues/197) yet 😞.     
 Hopefully this custom code can be replaced once there exists an official implementation.
 
