@@ -167,21 +167,28 @@ Note that it's not IMPOSSIBLE to make this work. For example an alternative solu
 
 Pragmatically, this seemed like a bigger change to our workflow than what were comfortable with. But perhaps it's something worth exploring in the future.
 ### ❌  Terraform?
-TODO:
-- No because having to do git changes is prohibitively slow
+At KT we actually use Terraform for provisioning AWS Functions, but using them for deployment would not be ideal because their aren't any easy ways to separate our environments.    
+[This article](https://medium.com/galvanize/aws-lambda-deployment-with-terraform-24d36cc86533) recommends having separate "logical" accounts for each environment.   
 
-### ❌  Serverless
-TODO:
-- No because of our build system
+### ❌  Serverless?
+It's simply not realistic to try and integrate Serverless when we already have our own Bazel build system.    
+Although, if KT was a purely a Lambda/Function shop it might make sense to use a more robust set of tools for deploying Functions.
 
 # Caveats
 ## Additional Complexity at KT
 At KT the implementation is a bit more complicated because we have to integrate [Bazel]() and [ArgoCD]() into the loop.   
-TODO: Describe in words what happens
 
-The diagram looks more like this at KT: 
+The CI/CD pipeline for Lambda Deployments at KT would look more like this: 
 ![Diagram of Architecture](/img/kt_lambda_deployment.png)   
 
+And in words:
+1. `bazel run ...`
+	- Compile the code
+	- Build a zip file as an artifact
+	- Generate a Lambda Deployment manifest as an artifact
+2. The zip file will be uploaded to S3 via CI script (under it's function name and commit hash)
+3. Apply the manifest to K8s + Some ArgoCD machinery like post-deploy jobs
+4. The CRD controller reconcile handler is triggered. The controller updates the lambda function using information in the manifest
 
 # Community Driven Project: ACK
 The AWS community is already in the midst of building Kubernetes controllers for various AWS resources (S3, SNS, SQS, ECR, DynamoDB, API Gateway) but they haven't gotten to [AWS Lambda Functions](https://github.com/aws-controllers-k8s/community/issues/197) yet 😞.     
