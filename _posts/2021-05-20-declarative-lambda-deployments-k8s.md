@@ -174,6 +174,12 @@ At KT we actually use Terraform for provisioning AWS Functions, but using them f
 It's simply not realistic to try and integrate Serverless when we already have our own Bazel build system.    
 Although, if KT was a purely a Lambda/Function shop it might make sense to use a more robust set of tools for deploying Functions.
 
+# Learnings
+1. Building and Deploying a custom Kubernetes controller is relatively easy with the various frameworks. Especially if you are familiar with Go.
+2. Push your compiled source code artifact (zip file or image) to an AWS store (S3 or ECR), with metadata that describes the code state at the time of compilation.
+	- This enables an easy way to point the AWS Function to a specific version of the code without having to go through the entire compilation and upload process
+3. Use AWS Parameter Store instead of Environment variables because this gives you more options for deploy AWS Functions
+	- You can use the context within the AWS Function to determine which parameters to pull from (based on prefix), combine this with Versions and Aliases and now you don't need multiple AWS Functions per Environment
 # Caveats
 ## Additional Complexity at KT
 At KT the implementation is a bit more complicated because we have to integrate [Bazel]() and [ArgoCD]() into the loop.   
