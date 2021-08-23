@@ -1,8 +1,8 @@
 ---
 layout: post
-title: How do I mingle ina crowd?
+title: How do I mingle in a crowd?
 permalink: posts/how-to-mingle
-publish: false
+published: false
 tags: ['personal', 'social']
 ---
 
