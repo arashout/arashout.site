@@ -34,4 +34,4 @@ Thus it's a necessity that I make the most of it. I'm honestly not abundantly cl
 ## Powerlift 2x A Week
 
 # Career
-## Developing A Personal Brand
+## Developing A Personal Brand??
