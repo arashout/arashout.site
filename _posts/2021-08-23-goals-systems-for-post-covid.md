@@ -3,7 +3,7 @@ layout: post
 title: Goals and systems for this year
 permalink: posts/goals-systems
 published: true
-tags: ['personal']
+tags: ['personal', 'habits', 'goals']
 ---
 
 # Inspiration
@@ -15,8 +15,7 @@ As you can see, my schedule is simply shifted approximately half a year from the
 
 
 # Become Part of the Running Community
-I recently moved into a studio apartment in East Vancouver; which means that I am paying an outrageous amount in rent. 
-
+I recently moved into a studio apartment in East Vancouver; which means that I am paying an outrageous amount in rent.    
 Thus it's a necessity that I make the most of it. I'm honestly not abundantly clear what that means to ME, YET, 
 but for now I think a worthy goal is to go to as many running clubs/groups/events as I can. Especially if they are located near me; most of them are. 
 ## Participate in the East Vancouver Running Club Runs on Monday's at 6:30PM
