@@ -2,7 +2,7 @@
 layout: post
 title: Starting out with Nix
 permalink: posts/starting-nix
-published: true
+published: false
 tags: ['nix']
 ---
 
@@ -45,3 +45,10 @@ nix-env -iA unstable.vscode
 # Third time is the charm ☑️
 nix-env -iA nixpkgs.vscode
 ``` 
+
+**Question: Should I edit the documentation on https://nixos.wiki/wiki/Vscode to explain this detail? Or is it not relevant in the `NixOS` documentation? Where is `Nix` specific documentation?**
+
+# Questions!
+- Where is my `configuration.nix`! 
+    - Managing extensions in VSCode requires putting code in there
+- Having a hard time figuring out how to get zsh shell
