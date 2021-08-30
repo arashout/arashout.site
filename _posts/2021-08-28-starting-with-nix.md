@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Starting out with Nix
+title: Starting out with Nix - A Misguided Adventure
 permalink: posts/starting-nix
-published: false
+published: true
 tags: ['nix']
 ---
 
@@ -52,3 +52,7 @@ nix-env -iA nixpkgs.vscode
 - Where is my `configuration.nix`! 
     - Managing extensions in VSCode requires putting code in there
 - Having a hard time figuring out how to get zsh shell
+
+# I WAS MISGUIDED
+So **HILARIOUSLY** enough I learned that this is NOT the optimal way to manage your environment setup because it's not declarative; Which is what `Nix` is all ABOUT.   
+I've seen moved on to using [`home-manager`](https://github.com/nix-community/home-manager), which I will detail in my next blog post.
