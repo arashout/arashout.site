@@ -20,3 +20,12 @@ https://hugoreeves.com/posts/2019/nix-home/
 https://www.youtube.com/watch?v=IUsQt4NRCnc&list=PLRGI9KQ3_HP_OFRG6R-p4iFgMSK1t5BHs&index=8
 7.
 https://discourse.nixos.org/t/is-this-a-good-way-to-modularize-home-manager-home-nix-for-home-work/5817/6
+
+
+# Questions
+- How to figure out what the package names of programs I want are?
+    - Node? 
+    - Where to find documentation for options? Are they the same packages in nixpkgs?
+- Should I manage VSCode extensions from Nix?
+- How do I decide what I manage from Nix and what I don't?
+- How do I import my bash_aliases?
