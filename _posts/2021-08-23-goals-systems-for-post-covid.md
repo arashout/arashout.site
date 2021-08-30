@@ -8,6 +8,8 @@ tags: ['personal', 'habits', 'goals']
 
 # Inspiration
 After reading [Atomic Habits](https://www.goodreads.com/book/show/40121378-atomic-habits), I felt inspired to jot down my plans and habits that I want to cultivate this year.   
+One of the basic tenets of the book is that you should focus on the SYSTEMS (habits) required to reach your eventual long term goal and execute and focus on that day by day instead of the end goal.   
+These "systems" should be realizable, specific and measurable so that there's no ambig 
 
 For me the year really starts in September, as the education system has warped how I see the year's progression; Summer is a time for rest and rejuvenation and Fall is the time to make plans that you'll wish you didn't commit to come Winter time.
 As you can see, my schedule is simply shifted approximately half a year from the rest of the world. I make my New Year's resolutions in September.   
@@ -23,18 +25,27 @@ but for now I think a worthy goal is to go to as many running clubs/groups/event
 ### *Bonus* Volunteer At-Least Once a Month
 ## *Bonus* Participate in the Icecream & Donut Park Run
 
-# How Good Can I Be At Climbing?
+# Career
+## Developing A Personal Brand??
+
+# How Good Can I Be At Climbing? 
+My concrete goal would be to be able to project Hex 4's at the Hive consistently and maybe even complete an odd Hex 5.     
+The plan overall is just to climb more but without getting injured. Which is honestly a difficult feat because basically I have to avoid consecutive days of climbing; Hard to do on weekends.   
 ## Climb 3-4 Times a Week 
-## Hang-board 1-2 Times a Week
+## Hangboard 1-2 Times a Week
+Sometimes I wonder if I enjoy hangboarding more than I like climbing? It sounds stupid but I think the tangible progress is more satisfying...
+Anyway I'm going to gradually add some hangboarding sessions to build up the finger strength as I keep better hopefully.    
+I don't want to be stupid and hangboard more than 2 times a week but they are hard to recover from and it will cut into my time to actually get better at climbing.
 ## Climb Outdoors Before The Season Ends!
-## Intermittent Fast 18-6 Protocol Daily
-### *Bonus* 24 Hour Fast Once A Week?
 
 # Will I Ever Learn To Dance?
 ## Go To 1 WCS Social A Week
 
+# Diet
+## Intermittent Fast 18-6 Protocol Daily
+You m
+### *Bonus* 24 Hour Fast Once A Week?
+
 # Strength Training
 ## Powerlift 2x A Week
 
-# Career
-## Developing A Personal Brand??
