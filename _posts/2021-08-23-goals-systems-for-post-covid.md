@@ -24,6 +24,15 @@ but for now I think a worthy goal is to go to as many running clubs/groups/event
 ## Participate in the Central Park Park Run Saturday's at 9AM 
 ### *Bonus* Volunteer At-Least Once a Month
 ## *Bonus* Participate in the Icecream & Donut Park Run
+## *Bonus* Stay After the Run To Mingle
+I noticed that I have a tendency to leave right after the run because I'm afraid of the possible uncomfortable-ness that MIGHT follow.    
+This bad habit is starting to feel like a crutch, social speaking. I always seem to come up with some kind of excuse for why I should leave right after the run;
+- I need to grab grocercies
+- I intentionally book climbing sessions right after the run
+- etc...
+
+I have to start forcing myself to stay, otherwise I won't ever become close friends with anyone else there.   
+
 
 # Career
 ## Developing A Personal Brand??
