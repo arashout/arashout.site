@@ -29,4 +29,4 @@ https://discourse.nixos.org/t/is-this-a-good-way-to-modularize-home-manager-home
 - Should I manage VSCode extensions from Nix?
 - How do I decide what I manage from Nix and what I don't?
 - How do I import my bash_aliases?
-- How do I avoid typing out `<name>.enable = true` for everything like this guy https://github.com/lucperkins/nix-home-config/blob/master/home.nix#L98  
+- How do I avoid typing out `<name>.enable = true` for everything like this guy https://github.com/lucperkins/nix-home-config/blob/master/home.nix#L98 
