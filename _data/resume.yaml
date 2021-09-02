@@ -54,7 +54,9 @@ experiences:
     summary: >-
       Building and maintaining Go services powering Bloxone DDI services.
     highlights:
-      - Built a Custom CRD Controller for declaratively deploy AWS Lambda Functions
+      - Unified AWS Lambda continuous deployment pipeline using custom K8s controller with rest of infrastructure, vastly improving developer productivity
+      - Mentored and onboarded new hires on the IoT team; allowing them to hit the ground running and contribute immediately!
+      - Reduced major pain-points in embedded developer workflow and tooling, resulting in faster release cycles 
     technologies:
       - Golang
       - Ruby/Rails
