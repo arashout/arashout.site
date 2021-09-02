@@ -49,7 +49,7 @@ profiles:
 experiences:
   - company: KeepTruckin
     position: Software Engineer
-    startDate: 2020-10-15T00:00:00.000Z
+    startDate: 2020-11-15T00:00:00.000Z
     endDate: null
     summary: >-
       Building and maintaining Go services powering Bloxone DDI services.
@@ -113,14 +113,6 @@ experiences:
       - Cypress
       - AWS
 education:
-  - institution: Georgia Institute of Technology
-    location:
-      city: Atlanta
-      regionCode: GA
-    studyType: Master of Science
-    area: Computer Science
-    startDate: 2020-09-07T00:00:00.000Z
-    endDate: 2023-05-01T00:00:00.000Z
   - institution: University of British Columbia
     location:
       city: Vancouver
