@@ -52,7 +52,6 @@ I don't want to be stupid and hangboard more than 2 times a week but they are ha
 
 # Diet
 ## Intermittent Fast 18-6 Protocol Daily
-You m
 ### *Bonus* 24 Hour Fast Once A Week?
 
 # Strength Training

@@ -20,7 +20,7 @@ I scrolled randomly and aimlessly through my teams PRs, sometimes having the **u
 Almost by concidence I stumbled on a problem code path that had been bothering my team for weeks/months but was one of those issues that would never get prioritized because it wasn't a critical issue or feature.    
 
 
-Honestly, I'm not quite sure what happened next, because I honed in on this problem with extreme laser focus. Focus that I handn't been able to muster for **this problem** in a long time [1](#1).    
+Honestly, I'm not quite sure what happened next, because I honed in on this problem with extreme laser focus. Focus that I handn't been able to muster for **this problem** in a long time [[1]](#footnotes).    
 I ended up programming for 3 straight hours in a kind of *FLOW* that I hadn't been in for a very long time. It felt really good. I ended up refactoring the code and prototyping a solution and a way forward. I'll probably have to review my PR after proper night's sleep; *because who knows what kind of bugs I've introduced in my sleep adled stupor*. But at 8am I was in a very good state of mind, not at all depressed or frustrated about my lack of sleep even though I was acutely aware of my fatigue and my growing in ability to keep my eyes (👁️) open.
 
 # Why even bother sleeping?   
@@ -31,4 +31,4 @@ Because remember, there won't be any distracting messages, meetings or other eve
 It's just you and your own thoughts, and maybe your computer screen if your anything like me.
 
 # Footnotes
-#### 1 - Think in my sleep deprived state I only had the mental capacity to focus on one thing. And one thing only.
+- [1] Think in my sleep deprived state I only had the mental capacity to focus on one thing. And one thing only.
