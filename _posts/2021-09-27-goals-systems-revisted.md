@@ -2,7 +2,7 @@
 layout: post
 title: Goals and systems for this year (Re-visited)
 permalink: posts/goals-systems-revisited
-published: false
+published: true
 tags: ['personal', 'habits', 'goals']
 ---
 
