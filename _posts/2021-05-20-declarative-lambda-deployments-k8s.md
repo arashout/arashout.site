@@ -2,7 +2,7 @@
 layout: post
 title: Declarative AWS Lambda Function Deployment with K8s Controller
 permalink: posts/declarative-lambda-deployments-with-k8s
-publish: false
+published: false
 tags: ['aws', 'lambda', 'k8s','controller']
 ---
 
