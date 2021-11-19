@@ -63,6 +63,11 @@ $page-width: 900px;
     max-width: $page-width - 100px;
 }
 
+pre,
+code {
+    background-color: #eef;
+}
+
 /* Utility classes  */
 
 .hidden {
