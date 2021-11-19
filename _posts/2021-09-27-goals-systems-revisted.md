@@ -14,7 +14,7 @@ I think the best way to go about this is to leave some of the text from the orig
 # Running
 > but for now I think a worthy goal is to go to as many running clubs/groups/events as I can. Especially if they are located near me; most of them are. 
 
-```
+```text
 ## Participate in the East Vancouver Running Club Runs on Monday's at 6:30PM
 ## Participate in the Central Park Park Run Saturday's at 9AM 
 ### *Bonus* Volunteer At-Least Once a Month
