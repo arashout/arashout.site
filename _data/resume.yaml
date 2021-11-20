@@ -52,7 +52,7 @@ experiences:
     startDate: 2020-11-15T00:00:00.000Z
     endDate: null
     summary: >-
-      Building and maintaining Go services powering Bloxone DDI services.
+      Developing core IoT infrastructure for an embedded fleet of 500k devices and continuously improving developer tooling.
     highlights:
       - Unified AWS Lambda continuous deployment pipeline using custom K8s controller with rest of infrastructure, vastly improving developer productivity
       - Mentored and onboarded new hires on the IoT team; allowing them to hit the ground running and contribute immediately!
