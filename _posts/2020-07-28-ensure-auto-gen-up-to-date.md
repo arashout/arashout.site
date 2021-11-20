@@ -2,7 +2,8 @@
 layout: post
 title: Ensure auto-generated code is always up-to-date with compile-time assertions in Go
 permalink: posts/ensure-auto-gen-up-date
-tags: ['go', 'code-generation', 'testing', 'mocks']
+published: true
+tags: ['go', 'code-generation', 'mocks']
 ---
 
 # Introduction
