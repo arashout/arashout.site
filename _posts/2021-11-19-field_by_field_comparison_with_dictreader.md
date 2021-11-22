@@ -6,6 +6,7 @@ published: true
 tags: ['python', 'tools']
 ---
 
+# Scenario
 I recently had to write a script for finding the differences between two CSVs but there were some caveats that made using the traditional csv reader or set of tools annoying.
 - It wasn't a line by line comparison. The CSV could potentially be missing over half of the data
 - The columns often didn't line-up. e.g. They would be in the wrong order or missing
@@ -14,6 +15,11 @@ I recently had to write a script for finding the differences between two CSVs bu
 Before reaching for [`pandas`](https://pandas.pydata.org/), I didn't to do a quick stack-overflow search to see if anything a little simpler existed. **This is something I wanted to show to someone who is just starting to learn Python so I didn't want to confuse them too much by throwing in industrial grade library with it's own semantics at them.**  
 
 I found a post on StackOverflow (Can't find it now...) which recommended using [`csv.DictReader`](https://docs.python.org/3/library/csv.html#csv.DictReader). What an amazing find! I love the Python standard library 😃 .
+
+## Additional Context
+The exact scenario involved checking if a bunch of data from the test environment had been properly imported into the production environment.   
+The developer know that a bunch of items would be missing or incorrect in the production environment but wanted to understand which records/fields needed fixing.    
+Thus the variable names involving `test` and `prod` below. Basically `test` is the source of truth.   
 
 # The Code
 ## Basics
@@ -78,7 +84,7 @@ from collections import defaultdict
 differences = defaultdict(list)
 
 # Some columns that I don't care about...
-ignored_columns = ["description", "debug_column", "bad_column"]
+ignored_columns = ["updated_at"]
 
 # Go over each common code and find the differences and collect them in Dictionary
 for code in codes_in_both:
@@ -109,4 +115,59 @@ with open('different_values.csv', 'w') as f:
         print("env\t{}".format("\t".join(['code'] + different_columns)), file=f)
         print("prod\t{}".format("\t".join([code] + get_column_values_for_code(code, data_p, different_columns))), file=f)
         print("test\t{}".format("\t".join([code] + get_column_values_for_code(code, data_t, different_columns))), file=f)
+```
+
+# Example
+Here is the output given the following CSV documents:
+## Input 
+```csv
+code,firstname,lastname,description,updated_at
+a836116b-7efc-485b-b456-78943e3e9502,Clementine,Howlyn,rurOsIYeXrIm,2019-11-04
+18babe33-9fb5-474e-af87-2f9d6900189b,Lusa,Lytton,GHqBuTnnKuC,2019-10-14
+f9facfca-1696-4e15-b83a-0bc013cb2fca,Jerry,Niles,QDArvCYSnHp PXwhGaGl,2019-06-06
+a1c9200e-655a-4eb2-a100-a87d0862ec05,Ermengarde,Bearnard,HZiPKaFXNcrQHUuK,2019-09-23
+e23f1926-fcf9-41e0-b66d-7cfc9fd413da,Keelia,Bohlin,BdkJfBdUyKAoV,2019-12-01
+c9a07378-f62b-4406-8133-3129b7eb2b1c,Diena,Klemperer,ctDgOBIClzSog,2019-09-17
+e289f02e-8e7d-4276-9003-d097b8b4b65d,Cindelyn,Vernier,vnaZHJpsgHSezIhw,2019-10-23
+09765ca2-b290-4888-888c-3537801dab53,Annora,Esmaria,hDNu SCSyzFVzthzGO,2019-04-20
+1fdea7c9-423e-48e6-bc48-66c410fb74a9,Emmey,Emanuel,"zPjAqpSDIlIh ",2019-01-02
+e0c54161-89f3-4124-b807-d6926ef282dd,Pamella,Halsey,tQxqUgXdtlXrXUFX,2019-02-21
+```
+
+```csv
+code,firstname,lastname,description,updated_at
+a836116b-7efc-485b-b456-78943e3e9502,Clementine,Howlyn,rurOsIYeXrIm,2019-11-04
+18babe33-9fb5-474e-af87-2f9d6900189b,Lusa,Lytton,GHqBuTnnKuCaa,2019-10-14
+a1c9200e-655a-4eb2-a100-a87d0862ec05,Ermengarde,Bearnard,HZiPKaFXNcrQHUuK,2019-09-23
+e23f1926-fcf9-41e0-b66d-7cfc9fd413da,Keelia,Bohlin,BdkJfBdUyKAoV,2019-12-01
+09765ca2-b290-4888-888c-3537801dab53,Annora,Esmaria,hDNu SCSyzFVzthzGO,2019-04-20
+1fdea7c9-423e-48e6-bc48-66c410fb74a9,Emmey,Emanuel,"zPjAqpSDIlIhbb ",2019-01-02
+e0c54161-89f3-4124-b807-d6926ef282dd,Pamella,Halsey,tQxqUgXdtlXrXUFX,2019-02-21
+```
+
+## Ouput
+```
+> python3 csv_comparison.py
+Missing 3 from prod
+Missing 0 from test
+7 codes in both test and prod
+2 rows have different values between prod and test
+```
+
+### missing_prod.csv
+```
+e289f02e-8e7d-4276-9003-d097b8b4b65d
+c9a07378-f62b-4406-8133-3129b7eb2b1c
+f9facfca-1696-4e15-b83a-0bc013cb2fca
+```
+
+### different_values.csv
+```csv
+env	code	description
+prod	18babe33-9fb5-474e-af87-2f9d6900189b	GHqBuTnnKuCaa
+test	18babe33-9fb5-474e-af87-2f9d6900189b	GHqBuTnnKuC
+env	code	description
+prod	1fdea7c9-423e-48e6-bc48-66c410fb74a9	zPjAqpSDIlIhbb 
+test	1fdea7c9-423e-48e6-bc48-66c410fb74a9	zPjAqpSDIlIh 
+
 ```
