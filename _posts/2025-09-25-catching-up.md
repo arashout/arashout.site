@@ -18,12 +18,6 @@ On the other hand, I was actually bouldering pretty aggressively in months leadi
 
 Anyway, so I guess recently I'm not running, bouldering or dancing as much as I used to.
 
-But none of that really bothers me as much as my current career prospects. I got laid off from Dropbox, which I don't really mind cause I was super miserable working there. Not only did I not know how to contribute, but also I felt super guilty for making so much money while being bad at my job.
-
-Being bad at my job was unfortunately not a new experience for me (I was terrible at construction work lol), but ever since I started as a software engineer I'd been doing well at my jobs. And the job before at KeepTruckin,it felt like I was on track to get promoted...
-
-I keep ruminating about how I shouldn't have left that job, for the money at Dropbox but I guess you never know what you have until you lose it right? I miss working on platform and IoT.
-
 The one bright spot is that I seemed to have resolved my persistent sleep issues with a prescription of Mirtazapone. I was looking back at my journal entries from the last 2 years and half them are sleep related. I'm taking a really small doses so I'm hoping I don't build a tolerance for a long time. It's been a couple months (I started in February after my Japan trip)
 
 Oh yeah! I went to Japan with my girlfriend and her brother + friend, it was really fun. She's super cool and easy to travel with. I usually hate travelling but it was fun with her. I love her lots. ❤️
