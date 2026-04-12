@@ -51,13 +51,13 @@ experiences:
     position: Software Engineer
     startDate: 2025-03-03T00:00:00.000Z
     endDate: null
-    summary: Full-stack engineer at AI video generation startup, owning revenue experiments, infrastructure migrations, and developer productivity across Django/React/TypeScript
+    summary: Full-stack engineer at AI video generation startup. Owning features E2E, many infrastructure migrations and developer productivity
     highlights:
-      - Designed and shipped stock imagery mode through iterative A/B testing over 3+ months, achieving a 29% lift in subscription conversion rate (1.16% vs 0.90%); managed rollout to 100% of users including a huge overhaul to the pricing model
-      - Built dynamic regional pricing using Stripe, resulting in 300% revenue increase from international markets in A/B testing
-      - Led migration from PGVector on AWS RDS to S3 Vectors, planning and executing a live data migration that reduced table size from 4GB to 50MB and decommissioned a $1,000/month database instance
-      - Improved CI test speed by 2.25x and TypeScript formatting by 20x by eliminating unnecessary password hashing, loading DB from snapshots, and replacing Prettier with BiomeJS across the frontend codebase
-      - Led Customer.io integration and built personalized onboarding experiments with pre-signup cookie-based A/B testing infrastructure, improving user segmentation and conversion tracking
+      - Overhauled video pricing model to a more sustainable per-duration charge through iterative A/B testing, while still achieving a 29% lift in subscription conversion rate
+      - Built dynamic regional pricing with Stripe, resulting in 300% revenue increase from international markets
+      - Migrated from PGVector (AWS RDS) to S3 Vectors, decommissioning a $1,000/month database
+      - Improved CI test speed by 2.25x and TypeScript formatting by 20x by eliminating unnecessary password hashing, loading DB from snapshots, and replacing Prettier with BiomeJS
+      - Led Customer.io integration and built personalized onboarding experiments with pre-signup A/B testing infrastructure
     technologies:
       - Python
       - Django
