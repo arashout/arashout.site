@@ -147,6 +147,17 @@ contributions:
     technologies:
       - Rust
 projects:
+  - name: Yappers
+    demo: "https://yappers.pages.dev"
+    summary: >-
+      Web app for making Slack-ready animated Yapper emoji from a headshot.
+    technologies:
+      - SolidJS
+      - TypeScript
+      - Vite
+      - Tailwind CSS
+      - Cloudflare Pages
+      - FAL
   - name: JobBot
     source: "https://github.com/arashout/JobBot"
     summary: >-
